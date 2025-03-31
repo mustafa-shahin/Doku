@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  31 MAR 2025 23:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  31 MAR 2025 23:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -565,22 +565,22 @@ nicht mehr kom-pa-ti-bel mit der neu-en Angular-
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 144.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 147.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [2]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 186.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 182.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [3]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 224.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 220.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [4]
-Overfull \hbox (11.52792pt too wide) in paragraph at lines 237--238
+Overfull \hbox (11.52792pt too wide) in paragraph at lines 233--234
 []\T1/phv/m/n/10.95 Toolbox mit ver-füg-ba-ren For-mu-lar-fel-dern (Text-feld, 
 Zah-len-feld, Drop-down, Check-box, Radio-
  []
@@ -589,28 +589,28 @@ Zah-len-feld, Drop-down, Check-box, Radio-
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 279.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 275.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [5]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 308.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 304.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [6]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 342.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 338.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [7]
-Overfull \hbox (9.1729pt too wide) in paragraph at lines 358--359
+Overfull \hbox (9.1729pt too wide) in paragraph at lines 354--355
 \T1/phv/m/n/10.95 Während der Pro-jek-tum-set-zung konn-te ich vie-le Er-fah-ru
 n-gen im Be-reich der Angular-Entwicklung
  []
 
 
-Overfull \hbox (0.66518pt too wide) in paragraph at lines 358--359
+Overfull \hbox (0.66518pt too wide) in paragraph at lines 354--355
 \T1/phv/m/n/10.95 sam-meln. Die Ar-beit mit An-gu-lar und Ty-pe-S-cript hat mir
  ge-zeigt, wie mo-der-ne Web-Frameworks
  []
@@ -619,13 +619,13 @@ Overfull \hbox (0.66518pt too wide) in paragraph at lines 358--359
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 362.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 358.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [8]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 399.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 395.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [9] (formular-editor-dokumentation.aux)
  ***********
@@ -635,7 +635,7 @@ L3 programming layer <2025-01-18>
  ) 
 Here is how much of TeX's memory you used:
  11747 strings out of 473523
- 190233 string characters out of 5710758
+ 190358 string characters out of 5710758
  608139 words of memory out of 5000000
  34773 multiletter control sequences out of 15000+600000
  583144 words of font info for 62 fonts, out of 8000000 for 9000
@@ -645,7 +645,7 @@ Here is how much of TeX's memory you used:
 600\ectt1095.pk><C:/Users/MustafaShahin/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb><C:/Users/MustafaShahin/AppData/Local/Programs/MiKTe
 X/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on formular-editor-dokumentation.pdf (10 pages, 126400 bytes).
+Output written on formular-editor-dokumentation.pdf (10 pages, 126387 bytes).
 PDF statistics:
  304 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)
