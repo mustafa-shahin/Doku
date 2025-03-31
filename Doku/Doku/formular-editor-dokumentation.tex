@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{article}
 
-% Pakete
+
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -13,11 +13,27 @@
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{fancyhdr}
+\usepackage{bookmark} 
+\usepackage{hyperref} 
 
-% Arial als Schriftart
+
+\hypersetup{
+    bookmarks=true,        
+    bookmarksnumbered=true, 
+    colorlinks=false,       
+    hidelinks=true,        
+    pdfborder={0 0 0},      
+    pdftitle={Dokumentation zur betrieblichen Projektarbeit},
+    pdfauthor={Mustafa Shahin},
+    pdfsubject={Formular-Editor Schnittstelle},
+    pdfkeywords={Angular, Formular-Editor, GSCS},
+    pdfstartview={FitH},    
+    pdfdisplaydoctitle=true 
+}
+
+
 \renewcommand{\familydefault}{\sfdefault}
 
-% Seitenränder entsprechend der Vorgaben
 \geometry{
   top=3.3cm,
   left=2.5cm,
@@ -27,13 +43,13 @@
   footskip=1.3cm
 }
 
-% Einzeiliger Zeilenabstand
+
 \singlespacing
 
-% Dokumentenbeginn
+
 \begin{document}
 
-% Kopf- und Fußzeile einrichten
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\includegraphics[height=1cm]{green_solutions_logo}}
@@ -42,9 +58,9 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-% Titelseite
+
 \begin{titlepage}
-\thispagestyle{empty} % Keine Kopf- und Fußzeile auf der Titelseite
+\thispagestyle{empty}
 
 \begin{center}
 \includegraphics[width=0.8\textwidth]{ihk_logo}
@@ -89,7 +105,9 @@
 \end{center}
 \end{titlepage}
 
-% Inhaltsverzeichnis wird übersprungen
+
+\tableofcontents
+\newpage
 
 \section{Einleitung}
 
@@ -103,8 +121,7 @@ Im Zuge der Modernisierung wurde das Frontend der GSCS von einer MVC-Architektur
 
 \subsection{Projektziel}
 
-Ziel des Projekts ist es, einen dynamischen Formular-Editor für die GSCS zu entwickeln und zu implementieren. Der Editor soll es Benutzern mit speziellen Rechten (Designer-Rechten) ermöglichen, Formulare innerhalb des Systems flexibel zu gestalten und anzupassen. Die Umsetzung erfolgt mit dem .NET Framework im Backend und Angular im Frontend.
-
+Ziel des Projekts ist es, einen dynamischen Formular-Editor für die GSCS zu entwickeln und zu implementieren. Der Editor soll es Benutzern mit speziellen Rechten (Designer-Rechten) ermöglichen, Formulare innerhalb des Systems flexibel zu gestalten und anzupassen. Die Umsetzung erfolgt mit dem .NET Framework im Backend und Angular im Frontend.\\
 Der Editor wird als Floating Window implementiert und soll folgende Kernfunktionalitäten bieten:
 
 \begin{itemize}
@@ -113,30 +130,24 @@ Der Editor wird als Floating Window implementiert und soll folgende Kernfunktion
 \item Definition von Pflichtfeldern
 \item Festlegung von Validierungsregeln
 \item Speichern von Formular-Templates
-\end{itemize}
-
+\end{itemize}\\
 Die Änderungen sollen in Echtzeit visualisiert und nach dem Speichern sofort im System verfügbar sein.
 
 \subsection{Projektbegründung}
 
 Die Umstellung des Frontends der GSCS auf Angular erfordert eine Neuentwicklung der Formularbearbeitung. Der bisherige Formular-Editor ist nicht mehr kompatibel mit der neuen Angular-Architektur. Formulare sind jedoch ein zentraler Bestandteil der GSCS und werden in verschiedenen Bereichen wie Kundenverwaltung, Produktkonfiguration und Bestellabwicklung eingesetzt.
-
 Eine flexible und benutzerfreundliche Möglichkeit zur Anpassung von Formularen ist für die Kunden der GSS-GmbH von großer Bedeutung, da verschiedene Branchen unterschiedliche Anforderungen an Formulare haben. Die Entwicklung eines neuen, auf Angular basierenden Formular-Editors ist daher unerlässlich, um die Funktionalität der GSCS aufrechtzuerhalten und zu verbessern.
 
 \subsection{Projektschnittstellen}
 
-Die GSCS der GSS-GmbH basiert auf C\# mit ASP.NET und dem Entity Framework und wird auf einem IIS-Webserver mit einer SQL-Datenbank betrieben. Das Frontend wurde von MVC mit jQuery auf Angular umgestellt.
-
-Die Benutzer des Formular-Editors sind primär Administratoren und Benutzer mit Designer-Rechten, die für die Anpassung und Erstellung von Formularen innerhalb des Systems verantwortlich sind.
-
-Ein Code Review wurde in Vorbereitung der Abnahme mit einem weiteren Fachinformatiker für Anwendungsentwicklung der GSS-GmbH durchgeführt.
-
+Die GSCS der GSS-GmbH basiert auf C\# mit ASP.NET und dem Entity Framework und wird auf einem IIS-Webserver mit einer SQL-Datenbank betrieben. Das Frontend wurde von MVC mit jQuery auf Angular umgestellt.\\
+Die Benutzer des Formular-Editors sind primär Administratoren und Benutzer mit Designer-Rechten, die für die Anpassung und Erstellung von Formularen innerhalb des Systems verantwortlich sind.\\
+Ein Code Review wurde in Vorbereitung der Abnahme mit einem weiteren Fachinformatiker für Anwendungsentwicklung der GSS-GmbH durchgeführt.\\
 Genehmigt wurde das Projekt von der Geschäftsführung der GSS-GmbH. In regelmäßigen Meetings wurde der Abteilungsleiter der Entwicklung über den aktuellen Entwicklungsstand und den Fortschritt des Projekts informiert.
 
 \subsection{Projektabgrenzung}
 
-Der Formular-Editor wird in das bestehende GSCS-System integriert. Die Implementierung umfasst die Angular-Frontend-Umsetzung und die Integration in das bestehende Backend-System.
-
+Der Formular-Editor wird in das bestehende GSCS-System integriert. Die Implementierung umfasst die Angular-Frontend-Umsetzung und die Integration in das bestehende Backend-System.\\
 Folgende Einschränkungen wurden berücksichtigt:
 
 \begin{itemize}
