@@ -124,7 +124,7 @@
 \subsection{Projektumfeld}
 Die Green Solutions Software GmbH entwickelt und betreibt die green solutions cloud software (GSCS) als zentrale Software für die grüne Branche. Als Teil der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formular-Editor entwickelt werden, der es Kunden ermöglicht, eigene Formulare ohne Programmierungskenntnisse zu erstellen und zu verwalten.
 
-Die GSCS bietet bereits verschiedene vorgefertigte Formulare für unterschiedliche Anwendungsfälle, jedoch erfordert die Anpassung dieser Formulare bisher den Einsatz von Entwicklungsressourcen. Die Entwicklung eines benutzerfreundlichen Formular-Editors würde die Flexibilität der GSCS erhöhen und gleichzeitig Entwicklungsressourcen einsparen.
+\noindent Die GSCS bietet bereits verschiedene vorgefertigte Formulare für unterschiedliche Anwendungsfälle, jedoch erfordert die Anpassung dieser Formulare bisher den Einsatz von Entwicklungsressourcen. Die Entwicklung eines benutzerfreundlichen Formular-Editors würde die Flexibilität der GSCS erhöhen und gleichzeitig Entwicklungsressourcen einsparen.
 
 \subsection{Projektziel}
 Ziel des Projekts ist die Implementierung eines dynamischen Formular-Editors als Komponente der GSCS. Der Editor soll es Benutzern ohne Programmierkenntnisse ermöglichen, Formulare nach ihren individuellen Anforderungen zu erstellen und zu gestalten. Die Komponente muss sich nahtlos in die bestehende Architektur der GSCS integrieren und die vorhandenen Designrichtlinien einhalten.
@@ -141,23 +141,21 @@ Folgende Kernfunktionalitäten sollen umgesetzt werden:
 
 \subsection{Projektbegründung}
 Die Implementierung eines dynamischen Formular-Editors für die GSCS bietet mehrere strategische Vorteile:
+\begin{itemize}
+\item Erstens ermöglicht der Editor den Kunden eine höhere Autonomie bei der Anpassung der Software an ihre individuellen Geschäftsprozesse. Dies steigert die Flexibilität und Akzeptanz der GSCS bei bestehenden und potenziellen Kunden.
 
-Erstens ermöglicht der Editor den Kunden eine höhere Autonomie bei der Anpassung der Software an ihre individuellen Geschäftsprozesse. Dies steigert die Flexibilität und Akzeptanz der GSCS bei bestehenden und potenziellen Kunden.
+\item Zweitens reduziert die Self-Service-Funktionalität den Support- und Entwicklungsaufwand für die GSS-GmbH. Statt individuelle Formularanpassungen durch Entwickler vornehmen zu lassen, können Kunden diese Anpassungen selbständig durchführen.
 
-Zweitens reduziert die Self-Service-Funktionalität den Support- und Entwicklungsaufwand für die GSS-GmbH. Statt individuelle Formularanpassungen durch Entwickler vornehmen zu lassen, können Kunden diese Anpassungen selbständig durchführen.
-
-Drittens bietet der Formular-Editor Wettbewerbsvorteile gegenüber anderen Softwarelösungen in der grünen Branche, die keine vergleichbare Funktion anbieten. Die Marktanalyse hat gezeigt, dass flexible Formulargestaltung ein häufig angefragtes Feature ist.
-
-Viertens ermöglicht der Editor eine schnellere Reaktion auf sich ändernde gesetzliche Anforderungen oder Marktbedingungen, da Anpassungen an Formularen zeitnah ohne Programmieraufwand erfolgen können.
-
+\item Drittens ermöglicht der Editor eine schnellere Reaktion auf sich ändernde gesetzliche Anforderungen oder Marktbedingungen, da Anpassungen an Formularen zeitnah ohne Programmieraufwand erfolgen können.
+\end{itemize}
 \subsection{Projektschnittstellen}
 Die Formular-Editor-Komponente interagiert mit verschiedenen Schnittstellen innerhalb der GSCS:
 
-\textbf{Technische Schnittstellen:} Die Komponente wird in Angular entwickelt und kommuniziert mit dem ASP.NET-Backend der GSCS über REST-APIs. Die Formularstrukturen werden in der SQL-Datenbank der GSCS gespeichert. Die Darstellung der Formulare erfolgt über das bestehende Design-System der GSCS, welches auf Angular und Tailwind CSS basiert.
+\noindent \textbf{Technische Schnittstellen:} Die Komponente wird in Angular entwickelt und kommuniziert mit dem ASP.NET-Backend der GSCS über REST-APIs. Die Formularstrukturen werden in der SQL-Datenbank der GSCS gespeichert.Die Darstellung der Formulare erfolgt über die neu entwickelte GSCS Frontend-App, die auf Angular und Tailwind CSS basiert.
 
-\textbf{Organisatorische Schnittstellen:} Die Entwicklung erfolgt in Abstimmung mit dem Frontend-Team und dem Backend-Team der GSS-GmbH. Der Projektfortschritt wird in regelmäßigen Abständen mit dem Abteilungsleiter Entwicklung besprochen. Die Abnahme des Projekts erfolgt durch den Produktmanager und die Geschäftsführung.
+\noindent \textbf{Organisatorische Schnittstellen:} Die Entwicklung erfolgt in Abstimmung mit dem Frontend-Team und dem Backend-Team der GSS-GmbH. Der Projektfortschritt wird in regelmäßigen Abständen mit dem Abteilungsleiter Entwicklung besprochen. Die Abnahme des Projekts erfolgt durch den TEamleiter, einen Senior-Frontend-Entwickler und die Geschäftsführung.
 
-\textbf{Benutzergruppen:} Primäre Benutzergruppen sind Administratoren und Power-User auf Kundenseite, die eigene Formulare erstellen und verwalten werden. Sekundäre Benutzergruppen sind die Endanwender, die die erstellten Formulare ausfüllen werden.
+\noindent \textbf{Benutzergruppen:} Primäre Benutzergruppen sind Administratoren und Power-User auf Kundenseite, die eigene Formulare erstellen und verwalten werden. Sekundäre Benutzergruppen sind die Endanwender, die die erstellten Formulare ausfüllen werden.
 
 \subsection{Projektabgrenzung}
 Der Formular-Editor wird als Komponente in die bestehende GSCS integriert und nutzt die vorhandene Infrastruktur. Folgende Aspekte sind nicht Teil des Projekts:
@@ -176,7 +174,7 @@ Für das Speichern und Laden von Formularstrukturen werden die existierenden Dat
 \subsection{Durchführung der Ist-Analyse}
 Die aktuelle Situation bezüglich der Formularerstellung und -verwaltung in der GSCS wurde anhand von Interviews mit Kunden, Support-Mitarbeitern und Entwicklern analysiert.
 
-Aktuell bietet die GSCS eine begrenzte Anzahl vordefinierter Formulare für verschiedene Anwendungsfälle. Diese Formulare sind statisch und können nur durch Entwickler angepasst werden. Kundenspezifische Anpassungen erfordern daher einen Entwicklungsauftrag, der sowohl Zeit- als auch Kostenaufwand für den Kunden bedeutet.
+\noindent Aktuell bietet die GSCS eine begrenzte Anzahl vordefinierter Formulare für verschiedene Anwendungsfälle. Diese Formulare sind statisch und können nur durch Entwickler angepasst werden. Kundenspezifische Anpassungen erfordern daher einen Entwicklungsauftrag, der sowohl Zeit- als auch Kostenaufwand für den Kunden bedeutet.
 
 Der aktuelle Prozess zur Anpassung von Formularen umfasst folgende Schritte:
 \begin{enumerate}
@@ -186,9 +184,7 @@ Der aktuelle Prozess zur Anpassung von Formularen umfasst folgende Schritte:
   \item Die angepasste Version wird im Rahmen eines regulären Releases ausgeliefert
 \end{enumerate}
 
-Dieser Prozess dauert je nach Komplexität der Anforderungen und Auslastung der Entwicklungsabteilung zwischen einer Woche und einem Monat. Aufgrund der begrenzten Ressourcen in der Entwicklungsabteilung können nicht alle Kundenanforderungen zeitnah umgesetzt werden, was zu Unzufriedenheit führt.
-
-Die Analyse ergab, dass etwa 25% aller Supportanfragen die Anpassung von Formularen betreffen. Dies bindet erhebliche Ressourcen in der Support- und Entwicklungsabteilung.
+\noindent Dieser Prozess dauert je nach Komplexität der Anforderungen und Auslastung der Entwicklungsabteilung zwischen einer und zwei Wochen, da aufgrund der begrenzten Ressourcen in der Entwicklungsabteilung nicht alle Kundenanforderungen zeitnah umgesetzt werden können, was zu Unzufriedenheit führt.
 
 \subsection{Durchführung der Soll-Analyse}
 Basierend auf den Erkenntnissen der Ist-Analyse und den Anforderungen der Stakeholder wurden folgende Anforderungen an den Formular-Editor definiert:
@@ -211,7 +207,7 @@ Basierend auf den Erkenntnissen der Ist-Analyse und den Anforderungen der Stakeh
   \item Performance: Die Ladezeit für den Editor darf 3 Sekunden nicht überschreiten
   \item Skalierbarkeit: Der Editor muss mit Formularen von bis zu 50 Feldern umgehen können
   \item Zuverlässigkeit: 99,5% Verfügbarkeit während der Betriebszeiten
-  \item Sicherheit: Einhaltung der DSGVO-Anforderungen und Schutz vor XSS-Angriffen
+  \item Sicherheit: Einhaltung der DSGVO-Anforderungen
   \item Wartbarkeit: Modularer Aufbau für einfache Erweiterbarkeit
 \end{itemize}
 
@@ -225,7 +221,7 @@ Für die Implementierung des Formular-Editors wurden drei Optionen in Betracht g
   \item Kauf einer kommerziellen Lösung
 \end{enumerate}
 
-Nach einer gründlichen Analyse der verfügbaren Optionen wurde die Entscheidung für eine Eigenimplementierung getroffen. Die Gründe hierfür waren:
+\noindent Nach einer gründlichen Analyse der verfügbaren Optionen wurde die Entscheidung für eine Eigenimplementierung getroffen. Die Gründe hierfür waren:
 
 \begin{itemize}
   \item Bessere Integration in die bestehende GSCS-Architektur
@@ -235,12 +231,10 @@ Nach einer gründlichen Analyse der verfügbaren Optionen wurde die Entscheidung
   \item Spezifische Anforderungen der grünen Branche, die von Standardlösungen nicht abgedeckt werden
 \end{itemize}
 
-Die untersuchten Open-Source-Lösungen erfüllten nicht alle Anforderungen oder hätten erhebliche Anpassungen erfordert. Kommerzielle Lösungen waren mit hohen Lizenzkosten verbunden und boten ebenfalls keine optimale Integration in die GSCS.
+\noindent Die untersuchten Open-Source-Lösungen erfüllten nicht alle Anforderungen oder hätten erhebliche Anpassungen erfordert. Kommerzielle Lösungen waren mit hohen Lizenzkosten verbunden und boten ebenfalls keine optimale Integration in die GSCS.
 
 \subsubsection{Projektkosten}
-Die Projektkosten wurden basierend auf dem geplanten Personalaufwand, Schulungskosten und technischen Ressourcen kalkuliert. Um das Betriebsgeheimnis zu wahren, werden für die folgende Berechnung realistische Näherungswerte verwendet.
-
-Der Personalaufwand wurde mit 80 Arbeitsstunden für die Implementierung des Formular-Editors angesetzt. Der durchschnittliche Stundensatz für Entwickler beträgt 65€/Stunde. Für die Testphase wurden weitere 20 Stunden eingeplant. Die Dokumentation und Schulung umfasst 15 Stunden.
+\noindent Der Personalaufwand wurde mit 40 Arbeitsstunden für die Implementierung und Testen des Formular-Editors angesetzt. Der durchschnittliche Stundensatz für Entwickler (Auszubildende) beträgt 30€/Stunde. Die Dokumentation und Schulung umfasst 40 Stunden.
 
 \begin{table}[h]
 \centering
@@ -248,30 +242,29 @@ Der Personalaufwand wurde mit 80 Arbeitsstunden für die Implementierung des For
 \toprule
 \textbf{Position} & \textbf{Stunden} & \textbf{Stundensatz} & \textbf{Kosten} \\
 \midrule
-Entwicklung & 80 & 65€ & 5.200€ \\
-Tests & 20 & 55€ & 1.100€ \\
-Dokumentation/Schulung & 15 & 50€ & 750€ \\
+Entwicklung & 40 & 30€ & 1.200€ \\
+Dokumentation/Schulung & 40 & 30€ & 1.200€ \\
 \midrule
-\textbf{Gesamtkosten} & & & \textbf{7.050€} \\
+\textbf{Gesamtkosten} & & & \textbf{2.400€} \\
 \bottomrule
 \end{tabular}
 \caption{Kostenkalkulation für die Implementierung des Formular-Editors}
 \end{table}
 
-Die Hardware- und Softwarekosten sind in dieser Berechnung nicht enthalten, da für die Entwicklung die bestehende Infrastruktur der GSS-GmbH genutzt wird.
+\noindent Für die Umsetzung des Projekts wird folgende Hardware verwendet: Ein leistungsstarker Arbeitsplatzrechner mit sechs Bildschirmen für das Büro sowie ein weiterer PC mit drei Bildschirmen für den Einsatz im Homeoffice. Als Software kommen Windows 11 Professional, Visual Studio 2022 Professional, Visual Studio Code sowie GitHub Enterprise zum Einsatz, um eine effiziente und professionelle Entwicklungsumgebung sicherzustellen.
 
 \subsubsection{Amortisationsdauer}
 Zur Berechnung der Amortisationsdauer wurden die Projektkosteneinsparungen durch den Formular-Editor analysiert. Basierend auf historischen Daten bearbeitet die Entwicklungsabteilung durchschnittlich 15 Formularanpassungen pro Monat mit einem durchschnittlichen Aufwand von 4 Stunden pro Anpassung. Bei einem Stundensatz von 65€ entspricht dies monatlichen Kosten von 3.900€.
 
-Mit dem Formular-Editor können Kunden Anpassungen selbst vornehmen, was den Entwicklungsaufwand reduziert. Es wird erwartet, dass 80% der Formularanpassungen von Kunden selbst durchgeführt werden können. Dies führt zu einer monatlichen Einsparung von 3.120€.
+\noindent Mit dem Formular-Editor können Kunden Anpassungen selbst vornehmen, was den Entwicklungsaufwand reduziert. Es wird erwartet, dass 80% der Formularanpassungen von Kunden selbst durchgeführt werden können. Dies führt zu einer monatlichen Einsparung von 3.120€.
 
-Bei einer Investition von 7.050€ und monatlichen Einsparungen von 3.120€ beträgt die Amortisationszeit etwa 2,3 Monate (7.050€ ÷ 3.120€, gerundet 2,3).
+\noindent Bei einer Investition von 7.050€ und monatlichen Einsparungen von 3.120€ beträgt die Amortisationszeit etwa 2,3 Monate (7.050€ ÷ 3.120€, gerundet 2,3).
 
 \section{Entwurf}
 \subsection{Verfügbare Datensätze ermitteln}
 Als Grundlage für den Entwurf des Formular-Editors wurde zunächst eine Analyse der in der GSCS verfügbaren Datenstrukturen durchgeführt. Dies umfasste die Identifikation der relevanten Entitäten und deren Beziehungen zueinander.
 
-Die GSCS verfügt bereits über eine Tabelle für Formulare, die um zusätzliche Spalten für die Formularstruktur erweitert werden kann. Ein Formular in der GSCS besteht aus folgenden Hauptkomponenten:
+\noindent Die GSCS verfügt bereits über eine Tabelle für Formulare, die um zusätzliche Spalten für die Formularstruktur erweitert werden kann. Ein Formular in der GSCS besteht aus folgenden Hauptkomponenten:
 
 \begin{itemize}
   \item Formular-Metadaten (Titel, Beschreibung, Erstellungsdatum, letzte Änderung)
@@ -281,7 +274,7 @@ Die GSCS verfügt bereits über eine Tabelle für Formulare, die um zusätzliche
   \item Zugriffsberechtigungen
 \end{itemize}
 
-Für die Darstellung der Formularfelder im Editor wurden die bereits vorhandenen UI-Komponenten der GSCS analysiert. Die meisten benötigten Komponenten existieren bereits im Design-System und können wiederverwendet werden, wodurch ein konsistentes Erscheinungsbild gewährleistet wird.
+\noindent Für die Darstellung der Formularfelder im Editor wurden die bestehenden UI-Komponenten der GSCS analysiert. Dabei hat sich gezeigt, dass einige der benötigten Komponenten bereits im Design-System vorhanden sind und wiederverwendet werden können, während weitere Komponenten neu entwickelt werden müssen. Zusätzlich wird ein Service erstellt, um die Verwaltung der Formular-Komponenten zu übernehmen und eine konsistente Darstellung sicherzustellen.
 
 \subsection{Entwurf der Datenmodellumwandlung}
 Für die Speicherung der Formularstrukturen wurde ein flexibles JSON-Schema entworfen, das alle erforderlichen Informationen enthält. Das Schema umfasst folgende Hauptbereiche:
@@ -292,9 +285,9 @@ Für die Speicherung der Formularstrukturen wurde ein flexibles JSON-Schema entw
   \item Felder: Detaillierte Informationen zu jedem Formularfeld, einschließlich Typ, Label, Validierungsregeln und weiteren spezifischen Konfigurationen
 \end{itemize}
 
-Das JSON-Schema ermöglicht eine flexible Erweiterung um neue Feldtypen oder Konfigurationsoptionen, ohne Änderungen an der Datenbankstruktur vornehmen zu müssen. Ein Beispiel für das Schema befindet sich im Anhang.
+\noindent Das JSON-Schema ermöglicht eine flexible Erweiterung um neue Feldtypen oder Konfigurationsoptionen, ohne Änderungen an der Datenbankstruktur vornehmen zu müssen. Ein Beispiel für das Schema befindet sich im Anhang.
 
-Um eine effiziente Bearbeitung von Formularen im Frontend zu ermöglichen, wurde ein Formularmodell für Angular entwickelt, das die Konvertierung zwischen dem JSON-Schema und den TypeScript-Objekten übernimmt. Dies vereinfacht die Implementierung des Drag-and-Drop-Editors und die Validierung der Formularstruktur.
+\noindent Um eine effiziente Bearbeitung von Formularen im Frontend zu ermöglichen, wurde ein Formularmodell für Angular entwickelt, das die Konvertierung zwischen dem JSON-Schema und den TypeScript-Objekten übernimmt. Dies vereinfacht die Implementierung des Drag-and-Drop-Editors und die Validierung der Formularstruktur.
 
 \subsection{Technischer Entwurf der Schnittstelle}
 Der Formular-Editor besteht aus mehreren Hauptkomponenten, die miteinander interagieren:
@@ -307,19 +300,19 @@ Der Formular-Editor besteht aus mehreren Hauptkomponenten, die miteinander inter
   \item Toolbar: Eine Werkzeugleiste mit Aktionen wie Speichern, Laden und Zurücksetzen
 \end{itemize}
 
-Der Form-Canvas verwendet ein Grid-System, das auf 12 Spalten basiert, um responsive Layouts zu ermöglichen. Jedes Formularfeld kann eine oder mehrere Spalten einnehmen und kann per Drag-and-Drop neu positioniert werden.
+\noindent Der Form-Canvas verwendet ein Grid-System, das auf 12 Spalten basiert, um responsive Layouts zu ermöglichen. Jedes Formularfeld kann eine oder mehrere Spalten einnehmen und kann per Drag-and-Drop neu positioniert werden.
 
-Die Kommunikation zwischen den Komponenten erfolgt über Angular-Services, die den Zustand des Formulars verwalten und Änderungen an alle beteiligten Komponenten propagieren. Für die Drag-and-Drop-Funktionalität wird die Angular-CDK-Bibliothek verwendet, die eine barrierefreie und benutzerfreundliche Implementierung ermöglicht.
+\noindent Die Kommunikation zwischen den Komponenten erfolgt über Angular-Services, die den Zustand des Formulars verwalten und Änderungen an alle beteiligten Komponenten propagieren. Für die Drag-and-Drop-Funktionalität wird die Bibliothek ngx-drag-drop verwendet, wobei das DndDropEvent zur Behandlung von Drop-Ereignissen dient
 
-Die Speicherung und Validierung der Formulare erfolgt über REST-API-Calls an das Backend. Die API-Schnittstelle wurde so gestaltet, dass sie sowohl den Speichervorgang als auch die Validierung der Formularstruktur unterstützt.
+\noindent Die Speicherung und Validierung der Formulare erfolgt über REST-API-Calls an das Backend. Die API-Schnittstelle wurde so gestaltet, dass sie sowohl den Speichervorgang als auch die Validierung der Formularstruktur unterstützt.
 
 \section{Implementierung}
 \subsection{Initialisierung des Projekts}
 Die Implementierung begann mit der Einrichtung der Entwicklungsumgebung und der Definition der grundlegenden Projektstruktur. Da der Formular-Editor als Komponente in die bestehende GSCS integriert werden sollte, wurde ein neues Angular-Modul innerhalb des bestehenden Projekts erstellt.
 
-Die Projektstruktur folgt den Best Practices für Angular-Anwendungen und orientiert sich an der bereits etablierten Struktur der GSCS. Die Hauptkomponenten wurden als eigenständige Module implementiert, um eine klare Trennung der Verantwortlichkeiten zu gewährleisten und die Wiederverwendbarkeit zu fördern.
+\noindent Die Projektstruktur folgt den Best Practices für Angular-Anwendungen und orientiert sich an der bereits etablierten Struktur der GSCS. Die Hauptkomponenten wurden als eigenständige Module implementiert, um eine klare Trennung der Verantwortlichkeiten zu gewährleisten und die Wiederverwendbarkeit zu fördern.
 
-Für die Versionskontrolle wurde ein dedizierter Branch im Git-Repository der GSCS erstellt, um die parallele Entwicklung zu ermöglichen, ohne den Hauptentwicklungszweig zu beeinträchtigen.
+\noindent Für die Versionskontrolle wurde ein dedizierter Branch im Git-Repository der GSCS erstellt, um die parallele Entwicklung zu ermöglichen, ohne den Hauptentwicklungszweig zu beeinträchtigen.
 
 \subsection{Implementierung der Modellumwandlung}
 Die Implementierung der Modellumwandlung umfasste die Erstellung von TypeScript-Interfaces und Klassen zur Repräsentation der Formularstruktur im Frontend. Diese Modelle bilden die Grundlage für die Interaktion zwischen dem Benutzer und der Formularstruktur.
