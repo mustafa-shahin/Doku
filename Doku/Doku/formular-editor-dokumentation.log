@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  6 APR 2025 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  6 APR 2025 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -426,31 +426,50 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cfttabindent=\skip102
 \cfttabnumwidth=\skip103
 )
+(C:\Users\MustafaShahin\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmi
+sc.sty
+Package: footmisc 2025/03/10 v7.0a a miscellany of footnote facilities
+
+(C:\Users\MustafaShahin\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmi
+sc-2022-02-14.sty
+Package: footmisc 2024/12/24 v6.0g a miscellany of footnote facilities
+\FN@temptoken=\toks24
+\footnotemargin=\dimen173
+\@outputbox@depth=\dimen174
+Package footmisc Info: Declaring symbol style bringhurst on input line 699.
+Package footmisc Info: Declaring symbol style chicago on input line 707.
+Package footmisc Info: Declaring symbol style wiley on input line 716.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 727.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 747.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 768
+.
+))
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 31.
+(hyperref)                setting the option has no effect on input line 33.
 
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 31.
-Package hyperref Info: Option `colorlinks' set `false' on input line 31.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 33.
+Package hyperref Info: Option `colorlinks' set `false' on input line 33.
 
 Package hyperref Warning: Unexpected value for option `hidelinks'
-(hyperref)                is ignored on input line 31.
+(hyperref)                is ignored on input line 33.
 
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 31.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 33.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 56.
+(hyperref)                setting the option has no effect on input line 58.
 
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 56.
-Package hyperref Info: Option `colorlinks' set `false' on input line 56.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 58.
+Package hyperref Info: Option `colorlinks' set `false' on input line 58.
 
 Package hyperref Warning: Unexpected value for option `hidelinks'
-(hyperref)                is ignored on input line 56.
+(hyperref)                is ignored on input line 58.
 
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 56.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 58.
 
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 61
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 63
 .
 
 (C:\Users\MustafaShahin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
@@ -464,24 +483,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (formular-editor-dokumentation.aux)
 \openout1 = `formular-editor-dokumentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -522,43 +541,52 @@ LaTeX Font Info:    ... okay on input line 61.
 p-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count303
-\scratchdimen=\dimen173
+\scratchdimen=\dimen175
 \scratchbox=\box59
 \nofMPsegments=\count304
 \nofMParguments=\count305
-\everyMPshowfont=\toks24
+\everyMPshowfont=\toks25
 \MPscratchCnt=\count306
-\MPscratchDim=\dimen174
+\MPscratchDim=\dimen176
 \MPnumerator=\count307
 \makeMPintoPDFobject=\count308
-\everyMPtoPDFconversion=\toks25
+\everyMPtoPDFconversion=\toks26
 )
 (C:\Users\MustafaShahin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\ep
 stopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(C:\Users\MustafaShahin\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.s
+ty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (C:\Users\MustafaShahin\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstop
 df-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 61.
+Package hyperref Info: Link coloring OFF on input line 63.
 <ihk_logo.png, id=3, 805.0075pt x 180.675pt>
 File: ihk_logo.png Graphic file (type png)
 <use ihk_logo.png>
-Package pdftex.def Info: ihk_logo.png  used on input line 77.
+Package pdftex.def Info: ihk_logo.png  used on input line 79.
 (pdftex.def)             Requested size: 364.19667pt x 81.73857pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 100.
+(Font)              <10.95> on input line 102.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 100.
+(Font)              <8> on input line 102.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 100.
+(Font)              <6> on input line 102.
 <green_solutions_logo.png, id=5, 435.87843pt x 94.10156pt>
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 115.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 117.
 (pdftex.def)             Requested size: 364.19667pt x 78.62547pt.
 
 
@@ -578,22 +606,35 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 \newpage
+l.123 \newpage
                [1]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 127.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 127.
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-34.
+36.
 
 (C:\Users\MustafaShahin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.f
 d
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
+Overfull \vbox (10.93166pt too high) has occurred while \output is active []
+
+
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 154.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 152.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [2]
-Overfull \hbox (5.86603pt too wide) in paragraph at lines 171--172
+
+File: green_solutions_logo.png Graphic file (type png)
+<use green_solutions_logo.png>
+Package pdftex.def Info: green_solutions_logo.png  used on input line 185.
+(pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
+[3]
+Overfull \hbox (5.86603pt too wide) in paragraph at lines 190--191
 \T1/phv/m/n/10.95 Für das Spei-chern und La-den von For-mu-lar-struk-tu-ren wer
 -den die exis-tie-ren-den Da-ten-bankstruk-
  []
@@ -602,10 +643,10 @@ Overfull \hbox (5.86603pt too wide) in paragraph at lines 171--172
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 185.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 216.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
-[3]
-Overfull \hbox (9.13971pt too wide) in paragraph at lines 196--197
+[4]
+Overfull \hbox (9.13971pt too wide) in paragraph at lines 216--217
 []\T1/phv/m/n/10.95 Konfigurationsmöglichkeiten für je-des Feld: La-bel, Platz-
 hal-ter-text, Stan-dard-wert, Pflichtfeld-
  []
@@ -614,42 +655,36 @@ hal-ter-text, Stan-dard-wert, Pflichtfeld-
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 225.
-(pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
-[4]
-
-File: green_solutions_logo.png Graphic file (type png)
-<use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 259.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 252.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [5]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 290.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 286.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [6]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 318.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 319.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [7]
-
-File: green_solutions_logo.png Graphic file (type png)
-<use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 349.
-(pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
-[8]
-Overfull \hbox (3.51155pt too wide) in paragraph at lines 356--357
-\T1/phv/m/n/10.95 stim-mung mit an-de-ren Kom-po-nen-ten und Mo-du-len. Fol-gen
--de In-te-gra-ti-ons-schrit-te wur-den durch-
+Overfull \hbox (14.64786pt too wide) in paragraph at lines 326--327
+\T1/phv/m/n/10.95 Die Spei-che-rung der For-mu-la-re er-folgt über REST-API-Cal
+ls an das Ba-ckend. Die API-Schnittstelle
  []
 
 
-Overfull \hbox (5.00089pt too wide) in paragraph at lines 374--375
-[]\T1/phv/m/n/10.95 Validierungsoptionen: De-fi-ni-ti-on der ver-füg-ba-ren Va-
-li-die-rungs-re-geln für ver-schie-de-ne Feld-
+
+File: green_solutions_logo.png Graphic file (type png)
+<use green_solutions_logo.png>
+Package pdftex.def Info: green_solutions_logo.png  used on input line 346.
+(pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
+[8]
+Overfull \hbox (3.51155pt too wide) in paragraph at lines 371--372
+\T1/phv/m/n/10.95 stim-mung mit an-de-ren Kom-po-nen-ten und Mo-du-len. Fol-gen
+-de In-te-gra-ti-ons-schrit-te wur-den durch-
  []
 
 
@@ -662,10 +697,16 @@ Package pdftex.def Info: green_solutions_logo.png  used on input line 384.
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 413.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 418.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [10]
-Overfull \hbox (11.79039pt too wide) in paragraph at lines 437--438
+
+File: green_solutions_logo.png Graphic file (type png)
+<use green_solutions_logo.png>
+Package pdftex.def Info: green_solutions_logo.png  used on input line 449.
+(pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
+[11]
+Overfull \hbox (11.79039pt too wide) in paragraph at lines 450--451
 \T1/phv/m/n/10.95 Die Ent-wick-ler-do-ku-men-ta-ti-on wur-de mit dem Ent-wick-l
 ungs-team ab-ge-stimmt und in ei-nem Review-
  []
@@ -674,25 +715,19 @@ ungs-team ab-ge-stimmt und in ei-nem Review-
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 445.
-(pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
-[11]
-
-File: green_solutions_logo.png Graphic file (type png)
-<use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 469.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 475.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [12]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 495.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 500.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [13]
 
 File: green_solutions_logo.png Graphic file (type png)
 <use green_solutions_logo.png>
-Package pdftex.def Info: green_solutions_logo.png  used on input line 503.
+Package pdftex.def Info: green_solutions_logo.png  used on input line 511.
 (pdftex.def)             Requested size: 131.79543pt x 28.45274pt.
 [14] (formular-editor-dokumentation.aux)
  ***********
@@ -701,19 +736,19 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12030 strings out of 473523
- 194741 string characters out of 5710758
- 612597 words of memory out of 5000000
- 35042 multiletter control sequences out of 15000+600000
- 583142 words of font info for 62 fonts, out of 8000000 for 9000
+ 12241 strings out of 473523
+ 198854 string characters out of 5710758
+ 615316 words of memory out of 5000000
+ 35221 multiletter control sequences out of 15000+600000
+ 592724 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,16n,93p,734b,583s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,15n,93p,921b,576s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/MustafaShahin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helveti
 c/uhvb8a.pfb><C:/Users/MustafaShahin/AppData/Local/Programs/MiKTeX/fonts/type1/
 urw/helvetic/uhvr8a.pfb>
-Output written on formular-editor-dokumentation.pdf (15 pages, 131399 bytes).
+Output written on formular-editor-dokumentation.pdf (15 pages, 137790 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 299 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 
