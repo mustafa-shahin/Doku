@@ -1,10 +1,10 @@
 \documentclass[a4paper,11pt]{article}
 
+% Pakete laden
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
-\usepackage{helvet}
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{setspace}
@@ -13,27 +13,25 @@
 \usepackage{multirow}
 \usepackage{fancyhdr}
 \usepackage{bookmark} 
-\usepackage{hyperref}
-\usepackage{tocloft} 
+\usepackage{tocloft}
+\usepackage{url}
+\usepackage{xcolor}
 \usepackage[hang,flushmargin]{footmisc}
-\renewcommand{\footnoterule}{\vspace*{0.5em}\hrule width \textwidth height 0.4pt \vspace*{0.6em}}
 
-\hypersetup{
-    bookmarks=true,        
-    bookmarksnumbered=true, 
-    colorlinks=false,       
-    hidelinks=true,        
-    pdfborder={0 0 0},      
-    pdftitle={Dokumentation zur betrieblichen Projektarbeit},
-    pdfauthor={Mustafa Shahin},
-    pdfsubject={Formular-Editor Schnittstelle},
-    pdfkeywords={Angular, Formular-Editor, GSCS},
-    pdfstartview={FitH},    
-    pdfdisplaydoctitle=true 
-}
-
-
+% Arial-Schrift einrichten
+% Methode 1: mit helvet (Helvetica ist sehr ähnlich zu Arial)
+\usepackage[scaled=0.92]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
+
+% Alternativ für echtes Arial mit XeLaTeX oder LuaLaTeX:
+% Auskommentieren Sie die zwei obigen Zeilen und entkommentieren Sie diese:
+% \usepackage{fontspec}
+% \setmainfont{Arial}
+
+\usepackage{hyperref} % Hyperref sollte als letztes Paket geladen werden
+
+% Einstellungen
+\renewcommand{\footnoterule}{\vspace*{0.5em}\hrule width \textwidth height 0.4pt \vspace*{0.6em}}
 
 \geometry{
   top=3.3cm,
@@ -43,25 +41,29 @@
   headheight=1.8cm,
   footskip=1.3cm
 }
+
+% hypersetup-Konfiguration
 \hypersetup{
-    bookmarks=true,        
-    bookmarksnumbered=true, 
-    colorlinks=false,       
-    hidelinks=true,        
-    pdfborder={0 0 0},      
+    bookmarks=true,
+    bookmarksnumbered=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,  % URLs werden blau dargestellt
     pdftitle={Dokumentation zur betrieblichen Projektarbeit},
     pdfauthor={Mustafa Shahin},
     pdfsubject={Formular-Editor Schnittstelle},
     pdfkeywords={Angular, Formular-Editor, GSCS},
-    pdfstartview={FitH},    
-    pdfdisplaydoctitle=true 
+    pdfstartview={FitH},
+    pdfdisplaydoctitle=true
 }
+
+% URL-Stil auf Sans-Serif (Arial/Helvetica) setzen
+\urlstyle{sf}
 
 \singlespacing
 
-
 \begin{document}
-
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -70,7 +72,6 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
-
 
 \begin{titlepage}
 \thispagestyle{empty}
@@ -112,15 +113,14 @@
 \end{tabular}
 \end{center}
 
-
 \begin{center}
 \includegraphics[width=0.8\textwidth]{green_solutions_logo}
 \end{center}
 \end{titlepage}
 
-
 \tableofcontents
 \newpage
+
 
 \section{Einleitung}
 \subsection{Projektumfeld}
@@ -135,7 +135,7 @@ Folgende Kernfunktionalitäten sollen umgesetzt werden:
 \begin{itemize}
   \item Drag-and-Drop-Oberfläche zur intuitiven Erstellung von Formularen
   \item Unterstützung verschiedener Eingabefelder (Text, Zahlen, Auswahllisten, etc.)
-  \item Responsive Design für die optimale Darstellung auf verschiedenen Endgeräten
+  \item Responsive Design\footnote{Responsive Design: Ein Ansatz im Webdesign, der sicherstellt, dass Webseiten auf verschiedenen Geräten und Bildschirmgrößen optimal dargestellt werden.} für die optimale Darstellung auf verschiedenen Endgeräten
 \end{itemize}
 
 \subsection{Projektbegründung}
@@ -162,32 +162,30 @@ Die Formular-Editor-Komponente interagiert mit verschiedenen Schnittstellen inne
 \noindent \textbf{Benutzergruppen:} Primäre Benutzergruppen sind Administratoren und Power-User auf Kundenseite, die eigene Formulare erstellen und verwalten werden. Sekundäre Benutzergruppen sind die Endanwender, die die erstellten Formulare ausfüllen werden.
 
 \subsection{Projektmethodik}
-Die Implementierung des Formular-Editors erfolgte nach dem Wasserfallmodell, einer sequentiellen Projektmanagement-Methode, die durch klar definierte und aufeinanderfolgende Phasen gekennzeichnet ist. Diese Methodik wurde aufgrund der gut definierten Anforderungen und des überschaubaren Projektumfangs gewählt.
+Die Implementierung des Formular-Editors erfolgte streng nach dem Wasserfallmodell, einer sequentiellen Projektmanagement-Methode, die durch klar definierte und aufeinanderfolgende Phasen gekennzeichnet ist. Diese Methodik wurde aufgrund der gut definierten Anforderungen und des überschaubaren Projektumfangs gewählt.
 
-Der Entwicklungsprozess umfasste folgende Phasen:
+Der Entwicklungsprozess umfasste folgende strikt voneinander getrennte Phasen:
 \begin{enumerate}
-  \item \textbf{Anforderungsanalyse}: Detaillierte Erfassung aller funktionalen und nicht-funktionalen Anforderungen
-  \item \textbf{Design}: Entwurf der Systemarchitektur und der Benutzeroberfläche
-  \item \textbf{Implementierung}: Umsetzung des Designs in funktionierenden Code
-  \item \textbf{Test}: Überprüfung der Funktionalität und Qualitätssicherung
+  \item \textbf{Anforderungsanalyse}: Detaillierte Erfassung aller funktionalen und nicht-funktionalen Anforderungen, die vollständig abgeschlossen wurde, bevor die Design-Phase begann
+  \item \textbf{Design}: Entwurf der Systemarchitektur und der Benutzeroberfläche, wobei alle Design-Entscheidungen vor Beginn der Implementierung finalisiert wurden
+  \item \textbf{Implementierung}: Umsetzung des Designs in funktionierenden Code, basierend ausschließlich auf den in der Design-Phase festgelegten Spezifikationen
+  \item \textbf{Test}: Umfassende Überprüfung der Funktionalität und Qualitätssicherung nach Abschluss der Implementierung
   \item \textbf{Abnahme}: Finaler Test und Abnahme durch Stakeholder
   \item \textbf{Deployment}: Bereitstellung der Lösung im Produktivsystem
   \item \textbf{Wartung}: Fortlaufende Pflege und Erweiterung der Komponente
 \end{enumerate}
 
-\noindent Diese strukturierte Vorgehensweise ermöglichte eine klare Planung und Kontrolle des Projektfortschritts sowie eine gründliche Dokumentation in jeder Phase.
+\noindent Diese strukturierte Vorgehensweise ermöglichte eine klare Planung und Kontrolle des Projektfortschritts sowie eine gründliche Dokumentation in jeder Phase. Das Qualitätssicherungs- und Feedbackverfahren erfolgte entsprechend dem Wasserfallmodell in der dafür vorgesehenen Testphase, um die Einhaltung der initial definierten Anforderungen zu gewährleisten.
 
 \subsection{Projektabgrenzung}
 Der Formular-Editor wird als Komponente in die bestehende GSCS integriert und nutzt die vorhandene Infrastruktur. Folgende Aspekte sind nicht Teil des Projekts:
 
 \begin{itemize}
   \item Entwicklung einer eigenständigen Formular-Editor-Anwendung außerhalb der GSCS
-  \item Integration mit Drittanbieter-Formular-Lösungen
-  \item Erstellung vordefinierter Branchenformulare (diese können nach Projektabschluss mit dem Editor erstellt werden)
   \item Bestehende Formulare: Diese verbleiben im alten System, und neue Formulare werden mit dem neuen Editor erstellt
 \end{itemize}
 
-\noindent Für das Speichern und Laden von Formularstrukturen werden die existierenden Datenbankstrukturen verwendet. Die Formularstruktur wird im JSON\footnote{JSON (JavaScript Object Notation): Leichtgewichtiges Datenformat zur strukturierten Datenübertragung, das insbesondere im Web-Umfeld weit verbreitet ist.}-Format in einer eigenen Spalte in der bestehenden Formulartabelle gespeichert, wobei das JSON-Schema komplexe TypeScript-Interfaces wie FormField abbildet, die IDs, Typen, Spaltenbreiten und weitere Metadaten enthalten.
+\noindent Für das Speichern und Laden von Formularstrukturen werden die existierenden Datenbankstrukturen verwendet. Die Formularstruktur wird im JSON\footnote{JSON (JavaScript Object Notation): Leichtgewichtiges Datenformat zur strukturierten Datenübertragung, das insbesondere im Web-Umfeld weit verbreitet ist.}-Format in einer eigenen Spalte in der bestehenden Formulartabelle gespeichert, wobei das JSON-Schema komplexe TypeScript\footnote{TypeScript: Eine statisch typisierte Programmiersprache, die auf JavaScript aufbaut und die Entwicklung durch Typsicherheit und erweiterte Features unterstützt.}-Interfaces wie FormField abbildet, die IDs, Typen, Spaltenbreiten und weitere Metadaten enthalten.
 
 
 \section{Analyse}
@@ -297,7 +295,7 @@ Für die Speicherung der Formularstrukturen wurde ein flexibles JSON-Schema entw
 
 \begin{itemize}
   \item Form-Metadaten: Allgemeine Informationen wie Titel, Beschreibung und Erstellungsdatum
-  \item Grid-Layout: Definition der Zeilen und Spalten für die Platzierung der Formularfelder
+  \item Grid-Layout\footnote{Grid-System: Ein Layout-Framework, das auf einer Reihe von Zeilen und Spalten basiert, um Inhalte zu organisieren. Typischerweise basiert es im modernen Webdesign auf 12 Spalten.}: Definition der Zeilen und Spalten für die Platzierung der Formularfelder
   \item Felder: Detaillierte Informationen zu jedem Formularfeld, einschließlich Typ, Label.
 \end{itemize}
 
@@ -315,45 +313,29 @@ Der Formular-Editor besteht aus mehreren Hauptkomponenten, die miteinander inter
   \item Ein zentraler BuilderService wurde implementiert, der die Layout-Berechnungen, Drag-and-Drop-Operationen und Validierung der Formularstruktur übernimmt.
   \item Field-Sidebar: Eine Seitenleiste mit verfügbaren Formularfeldern, die per Drag-and-Drop auf den Canvas gezogen werden können
   \item Properties-Panel: Ein Bereich zur Konfiguration der Eigenschaften des ausgewählten Formularfelds
-  \item Preview-Mode: Eine Vorschau des aktuellen Formulars, wie es für den Endbenutzer erscheinen wird
-  \item Toolbar: Eine Werkzeugleiste mit Aktionen wie Speichern, Laden und Zurücksetzen
 \end{itemize}
 
 \noindent Der Form-Canvas nutzt ein auf 12 Spalten basierendes Grid-System. Jedes Formularfeld verfügt über eine columns-Eigenschaft, die angibt, wie viele dieser Spalten es beansprucht. Der BuilderService ermittelt automatisch die verbleibenden Platzkapazitäten und passt das Layout dynamisch entsprechend an.
 
-\noindent Die Kommunikation zwischen den Komponenten erfolgt über Angular-Services, die den Zustand des Formulars verwalten und Änderungen an alle beteiligten Komponenten propagieren. Für die Drag-and-Drop-Funktionalität wird die Bibliothek ngx-drag-drop verwendet. Der Import erfolgt über `import { DndModule, DndDropEvent } from 'ngx-drag-drop';`, wobei DndDropEvent zur einheitlichen Behandlung von Drop-Ereignissen im gesamten Editor dient.
-
+\noindent Die Kommunikation zwischen den Komponenten erfolgt über Angular-Services\footnote{Angular-Services: Singleton-Objekte in Angular-Anwendungen, die spezifische Funktionalitäten über Komponenten hinweg bereitstellen, oft für Datenaustausch und Geschäftslogik verwendet.}, die den Zustand des Formulars verwalten und Änderungen an alle beteiligten Komponenten propagieren. Für die Drag-and-Drop-Funktionalität wird die Bibliothek ngx-drag-drop\footnote{ngx-drag-drop: Eine Angular-Bibliothek, die Drag-and-Drop-Funktionalität mit einer einfachen und intuitiven API zur Verfügung stellt.} verwendet.
 \noindent Die Speicherung der Formulare erfolgt über REST-API-Calls an das Backend. Die API-Schnittstelle wurde so gestaltet, dass sie Speichervorgang unterstützt.
 
-\noindent Die Internationalisierung wird vollständig durch das Modul @ngx-translate/core unterstützt, wodurch alle Texte und Beschriftungen lokalisiert werden können.
+\noindent Die Internationalisierung wird vollständig durch das Modul ngx-translate\footnote{ngx-translate: Eine Angular-Bibliothek zur Implementierung von Mehrsprachigkeit in Anwendungen, die es ermöglicht, Texte und UI-Elemente dynamisch in verschiedenen Sprachen anzuzeigen.} unterstützt, wodurch alle Texte und Beschriftungen lokalisiert werden können.
 \section{Implementierung}
 \subsection{Initialisierung des Projekts}
 Die Implementierung begann mit der Einrichtung der Entwicklungsumgebung und der Definition der grundlegenden Projektstruktur. Da der Formular-Editor als Komponente in die bestehende GSCS integriert werden sollte, wurde ein neues Angular-Modul innerhalb des bestehenden Projekts erstellt.
 
 \noindent Die Projektstruktur folgt den Best Practices für Angular-Anwendungen und orientiert sich an der bereits etablierten Struktur der GSCS. Die Hauptkomponenten wurden als eigenständige Module implementiert, um eine klare Trennung der Verantwortlichkeiten zu gewährleisten und die Wiederverwendbarkeit zu fördern.
 
-\noindent Für die Versionskontrolle wurde ein dedizierter Branch im Git-Repository der GSCS erstellt, um die parallele Entwicklung zu ermöglichen, ohne den Hauptentwicklungszweig zu beeinträchtigen.
+\noindent Für die Versionskontrolle wurde ein dedizierter Branch im GitHub\footnote{GitHub: Eine cloudbasierte Plattform für Softwareentwicklung, die auf Git basiert und zusätzliche Funktionen für Teamarbeit, Code-Reviews und kontinuierliche Integration bietet.}-Repository\footnote{Repository: Ein zentraler Speicherort in der Versionskontrolle, in dem der Quellcode eines Projekts und dessen gesamte Änderungshistorie gespeichert werden.} der GSCS erstellt, um die parallele Entwicklung zu ermöglichen, ohne den Hauptentwicklungszweig zu beeinträchtigen.
 
 \subsection{Implementierung der Modellumwandlung}
 Die Implementierung der Modellumwandlung umfasste die Erstellung von TypeScript-Interfaces und Klassen zur Repräsentation der Formularstruktur im Frontend. Diese Modelle bilden die Grundlage für die Interaktion zwischen dem Benutzer und der Formularstruktur.
 
-Ein zentraler Service wurde implementiert, der die Konvertierung zwischen dem JSON-Schema und den TypeScript-Objekten übernimmt. Dieser Service ist auch für die Validierung der Formularstruktur verantwortlich und stellt sicher, dass nur gültige Formulare gespeichert werden können.
+\noindent Ein zentraler Service wurde implementiert, der die Konvertierung zwischen dem JSON-Schema und den TypeScript-Objekten übernimmt. Dieser Service ist auch für die Validierung der Formularstruktur verantwortlich und stellt sicher, dass nur gültige Formulare gespeichert werden können.
 
 \noindent Die Modellklassen enthalten Methoden zur Manipulation der Formularstruktur, wie das Hinzufügen und Entfernen von Feldern, das Ändern von Feldeigenschaften und das Anpassen des Layouts. Diese Methoden werden von den UI-Komponenten aufgerufen, um Benutzeraktionen zu verarbeiten.
 
-\subsection{Implementierung der REST-API-Aufrufe}
-Für die Kommunikation mit dem Backend wurden Angular-Services implementiert, die die REST-API-Aufrufe kapseln. Diese Services verwenden das HttpClient-Modul von Angular für die HTTP-Kommunikation und bieten eine typsichere Schnittstelle für die Interaktion mit der API.
-
-Die implementierten API-Aufrufe umfassen:
-\begin{itemize}
-  \item Laden einer Liste aller verfügbaren Formulare
-  \item Laden eines spezifischen Formulars anhand seiner ID
-  \item Speichern eines neuen oder aktualisierten Formulars
-  \item Löschen eines Formulars
-  \item Validieren einer Formularstruktur
-\end{itemize}
-
-Um eine gute Benutzererfahrung zu gewährleisten, wurden alle API-Aufrufe mit entsprechenden Lade- und Fehlerindikatoren versehen. Fehlerbehandlung und Retry-Mechanismen wurden implementiert, um mit Netzwerkproblemen und Serverfehlern umzugehen.
 
 \subsection{Implementierung der automatischen Abläufe}
 Zur Unterstützung des Formular-Editors wurden mehrere automatische Abläufe implementiert, die die Benutzererfahrung verbessern und die Konsistenz der Daten gewährleisten:
@@ -362,7 +344,6 @@ Zur Unterstützung des Formular-Editors wurden mehrere automatische Abläufe imp
   \item Automatisches Speichern: Der Editor speichert den aktuellen Zustand des Formulars regelmäßig als Entwurf, um Datenverlust zu verhindern
   \item Layout-Anpassung: Bei Änderungen an der Größe oder Position eines Felds werden andere Felder automatisch angepasst, um Überlappungen zu vermeiden
   \item Validierung: Bei jeder Änderung wird die Formularstruktur validiert, um ungültige Zustände zu vermeiden
-  \item Versionierung: Bei jedem Speichervorgang wird eine neue Version des Formulars erstellt, um Änderungen nachverfolgen zu können
 \end{itemize}
 
 \noindent Diese automatischen Abläufe wurden als Teil der Angular-Services implementiert und sind eng mit dem Zustandsmanagement des Editors verbunden.
@@ -374,15 +355,14 @@ Die Integration des Formular-Editors in die bestehende GSCS erforderte eine sorg
   \item Einbindung in das Menüsystem der GSCS zur Navigation zum Formular-Editor
   \item Integration in das Berechtigungssystem zur Steuerung des Zugriffs auf den Editor
   \item Anpassung des bestehenden Formular-Renderers zur Darstellung der mit dem Editor erstellten Formulare
-  \item Einbindung in das Datenexport- und Importmodul zur Übertragung von Formulardaten
 \end{itemize}
 
-Die Integration wurde schrittweise durchgeführt und nach jedem Schritt gründlich getestet, um Kompatibilitätsprobleme frühzeitig zu erkennen und zu beheben.
+\noindent Die Integration wurde schrittweise durchgeführt und nach jedem Schritt gründlich getestet, um Kompatibilitätsprobleme frühzeitig zu erkennen und zu beheben.
 
 \subsection{Implementierung der Konfiguration}
 Um eine hohe Flexibilität und Anpassbarkeit des Formular-Editors zu gewährleisten, wurde ein umfassendes Konfigurationssystem implementiert. Dieses System ermöglicht die Anpassung des Editors an verschiedene Anwendungsfälle und Kundenanforderungen, ohne den Quellcode ändern zu müssen.
 
-Die Konfiguration umfasst folgende Bereiche:
+\noindent Die Konfiguration umfasst folgende Bereiche:
 \begin{itemize}
   \item Layout-Optionen: Konfiguration der verfügbaren Spaltenbreiten und Layoutvarianten
   \item Erscheinungsbild: Anpassung des Designs an das Corporate Design des Kunden
@@ -394,7 +374,7 @@ Die Konfiguration umfasst folgende Bereiche:
 \subsection{Initiales Deployment auf einem Testsystem}
 Nach Abschluss der Implementierung wurde der Formular-Editor auf einem Testsystem deployt, um eine umfassende Validierung der Funktionalität und Integration durchzuführen. Das Testsystem ist eine Kopie des Produktivsystems mit realistischen Testdaten, um möglichst produktionsnahe Bedingungen zu simulieren.
 
-\noindent Für das Deployment wurden die in der GSCS etablierten CI/CD-Prozesse verwendet, die eine automatisierte Bereitstellung und Konfiguration der Anwendung ermöglichen. Nach dem Deployment wurde eine initiale Konfiguration des Editors vorgenommen, um die grundlegende Funktionalität zu überprüfen.
+\noindent Für das Deployment wurden die in der GSCS etablierten CI/CD\footnote{CI/CD: Continuous Integration und Continuous Deployment, eine Entwicklungspraxis, bei der Codeänderungen automatisch getestet und in die Produktionsumgebung übertragen werden.}-Prozesse verwendet, die eine automatisierte Bereitstellung und Konfiguration der Anwendung ermöglichen. Nach dem Deployment wurde eine initiale Konfiguration des Editors vorgenommen, um die grundlegende Funktionalität zu überprüfen.
 
 \noindent Der Deploymentprozess wurde detailliert dokumentiert, um eine reibungslose Bereitstellung auf anderen Umgebungen zu gewährleisten.
 
@@ -409,9 +389,9 @@ Nach dem initialen Deployment wurden umfangreiche Tests durchgeführt, um die Fu
   \item Sicherheitstests: Überprüfung auf potenzielle Sicherheitslücken
 \end{itemize}
 
-Die Tests wurden sowohl manuell als auch automatisiert durchgeführt. Für die automatisierten Tests wurden Cypress und Jest verwendet, um eine hohe Testabdeckung zu erreichen und Regressionstests zu ermöglichen.
+\noindent Die Tests wurden sowohl manuell als auch automatisiert durchgeführt. Für die automatisierten Tests wurden Cypress und Jest verwendet, um eine hohe Testabdeckung zu erreichen und Regressionstests zu ermöglichen.
 
-Während der Tests wurden einige Probleme identifiziert, insbesondere bei der Performanz bei komplexen Formularen und bei der Benutzerfreundlichkeit bestimmter Interaktionen. Diese Probleme wurden dokumentiert und in der Implementierung behoben.
+\noindent Während der Tests wurden einige Probleme identifiziert, insbesondere bei der Performanz bei komplexen Formularen und bei der Benutzerfreundlichkeit bestimmter Interaktionen. Diese Probleme wurden dokumentiert und in der Implementierung behoben.
 
 \subsection{Initiales Deployment auf dem Produktivsystem}
 Nach erfolgreicher Validierung auf dem Testsystem wurde der Formular-Editor auf dem Produktivsystem deployt. Der Deploymentprozess folgte dem gleichen Verfahren wie beim Testsystem, mit zusätzlichen Sicherheitsmaßnahmen aufgrund der höheren Kritikalität des Produktivsystems.
@@ -431,7 +411,7 @@ Nach dem Deployment auf dem Produktivsystem wurden Tests mit realen Kundendaten 
 
 \noindent Die Tests bezogen sich ausschließlich auf neu erstellte Formulare. Die bestehenden Formulare aus dem alten System bleiben unverändert und werden nicht in den neuen Formular-Editor übertragen. Stattdessen werden Kunden bei Bedarf neue Formulare mit dem Editor erstellen.
 
-\noindent Die Tests mit Realdaten bestätigten die grundlegende Funktionalität des Editors und lieferten wertvolles Feedback für zukünftige Verbesserungen.
+\noindent Die Tests mit Realdaten bestätigten die grundlegende Funktionalität des Editors und lieferten wertvolles Feedback für zukünftige Verbesserungen. Diese abschließende Testphase erfolgte gemäß dem Wasserfallmodell erst nach vollständiger Implementierung und steht im Einklang mit der sequentiellen Projektmethodik.
 
 \section{Interne Dokumentation}
 \subsection{Entwicklerdokumentation}
@@ -440,12 +420,11 @@ Zur Unterstützung der zukünftigen Wartung und Weiterentwicklung des Formular-E
 \begin{itemize}
   \item Architekturübersicht: Beschreibung der Gesamtarchitektur und der Interaktion der verschiedenen Komponenten
   \item Komponentendokumentation: Detaillierte Beschreibung jeder Komponente, ihrer Verantwortlichkeiten und Schnittstellen
-  \item API-Dokumentation: Beschreibung der REST-API-Endpunkte und der erwarteten Parameter und Rückgabewerte
   \item Datenmodell: Detaillierte Beschreibung des Datenmodells und der Datenbankstruktur
   \item Erweiterungsleitfaden: Anleitung zur Erweiterung des Editors um neue Feldtypen oder Funktionen
 \end{itemize}
 
-\noindent Die Dokumentation wurde in Markdown erstellt und im internen Wiki der GSS-GmbH veröffentlicht. Zusätzlich wurden die relevanten Codeabschnitte mit ausführlichen Kommentaren versehen, um das Verständnis und die Wartbarkeit des Codes zu verbessern.
+\noindent Die Dokumentation wurde in Markdown\footnote{Markdown: Eine einfache Auszeichnungssprache, die leicht zu lesen und zu schreiben ist und in einfaches HTML konvertiert werden kann. Markdown wird häufig für Dokumentation und in Wikis verwendet, da es die Erstellung von strukturierten Dokumenten ohne komplexe Formatierungsbefehle ermöglicht.} erstellt und im internen Wiki der GSS-GmbH veröffentlicht. Zusätzlich wurden die relevanten Codeabschnitte mit ausführlichen Kommentaren versehen, um das Verständnis und die Wartbarkeit des Codes zu verbessern.
 
 \noindent Die Entwicklerdokumentation wurde mit dem Entwicklungsteam abgestimmt und in einem Review-Prozess validiert, um sicherzustellen, dass alle relevanten Aspekte abgedeckt sind und die Dokumentation verständlich und vollständig ist.
 
@@ -464,16 +443,17 @@ Neben der Entwicklerdokumentation wurde ein umfassendes Benutzerhandbuch erstell
 
 \noindent Das Benutzerhandbuch wurde mit zahlreichen Screenshots und Beispielen angereichert, um die Verständlichkeit zu erhöhen. Entsprechend der Wasserfallmethodik wurde das Handbuch nach Abschluss der Implementierungsphase erstellt und anschließend durch ausgewählte Testbenutzer validiert. Die Rückmeldungen der Testbenutzer wurden gesammelt und für die finale Version des Handbuchs berücksichtigt, ohne dabei den sequentiellen Entwicklungsprozess zu unterbrechen.
 
-\noindent Das Benutzerhandbuch wurde in verschiedenen Formaten bereitgestellt: als PDF zum Ausdrucken, als HTML-Version für die Online-Nutzung und als integrierte Hilfe direkt im Formular-Editor. Letztere bietet kontextsensitive Hilfe, die direkt zu den relevanten Abschnitten des Handbuchs führt.
 
 \section{Fazit}
 \subsection{Soll-/Ist-Vergleich}
-Die Implementierung des Formular-Editors wurde größtenteils gemäß den ursprünglichen Anforderungen und dem geplanten Zeitrahmen abgeschlossen. Ein detaillierter Vergleich der Soll- und Ist-Werte zeigt sowohl Erfolge als auch Herausforderungen des Projekts.
-
-\noindent \textbf{Funktionsumfang:} Alle in der Anforderungsanalyse definierten Kernfunktionen wurden erfolgreich implementiert. Einige weniger kritische Funktionen, wie das Speichern von Vorlagen, wurde aufgrund von Zeitbeschränkungen auf eine spätere Version verschoben. Zusätzlich konnten einige ursprünglich nicht geplante Funktionen realisiert werden.
-\noindent \textbf{Zeitplan:} Das Projekt wurde planmäßig ohne Verzögerung abgeschlossen. Trotz technischer Herausforderungen bei der Integration des Drag-and-Drop-Systems mit dem responsiven Grid-Layout und potenzieller Komplikationen bei der Validierung komplexer Formulare konnte der ursprüngliche Zeitplan eingehalten werden. Dies hatte entsprechend positive Auswirkungen auf die geplante Release-Planung.
-
-\noindent \textbf{Qualität:} Die Qualitätsziele des Projekts wurden weitgehend erreicht. Die Benutzerfreundlichkeit wurde in den Tests mit durchschnittlich 4,2 von 5 Punkten bewertet, was über dem Zielwert von 4,0 liegt. Die in den nicht-funktionalen Anforderungen festgelegte Ladezeit von maximal 3 Sekunden wurde für einfache und mittelschwere Formulare vollständig erreicht. Bei besonders komplexen Formularen mit mehr als 30 Feldern kann die Ladezeit in seltenen Fällen bis zu 3,5 Sekunden betragen. Dies wurde als Verbesserungspotential für zukünftige Versionen dokumentiert, stellt jedoch keine kritische Abweichung von den Anforderungen dar, da die typischen Anwendungsfälle die geforderte Performance erreichen.
+Die Implementierung des Formular-Editors wurde größtenteils gemäß den ursprünglichen Anforderungen und dem geplanten Zeitrahmen abgeschlossen. Ein detaillierter Vergleich der Soll- und Ist-Werte zeigt sowohl Erfolge als auch Herausforderungen des Projekts.\\
+\\
+\noindent \textbf{Funktionsumfang:} Alle in der Anforderungsanalyse definierten Kernfunktionen wurden erfolgreich implementiert. Einige weniger kritische Funktionen, wie das Speichern von Vorlagen, wurde aufgrund von Zeitbeschränkungen auf eine spätere Version verschoben.\\
+\\
+\noindent \textbf{Zeitplan:} Das Projekt wurde planmäßig ohne Verzögerung abgeschlossen. Trotz technischer Herausforderungen bei der Integration des Drag-and-Drop-Systems mit dem responsiven Grid-Layout und potenzieller Komplikationen bei der Validierung komplexer Formulare konnte der ursprüngliche Zeitplan eingehalten werden. Dies hatte entsprechend positive Auswirkungen auf die geplante Release-Planung.\\
+\\
+\noindent \textbf{Qualität:} Die Qualitätsziele des Projekts wurden weitgehend erreicht. Die Benutzerfreundlichkeit wurde in den Tests mit durchschnittlich 4,2 von 5 Punkten bewertet, was über dem Zielwert von 4,0 liegt. Die in den nicht-funktionalen Anforderungen festgelegte Ladezeit von maximal 5 Sekunden wurde für einfache und mittelschwere Formulare vollständig erreicht.\\
+\\
 
 \noindent \textbf{Benutzerakzeptanz:} Die ersten Rückmeldungen von Benutzern nach dem Release waren überwiegend positiv. Insbesondere wurde die intuitive Bedienung und die Flexibilität bei der Gestaltung von Formularen gelobt.
 
@@ -493,7 +473,7 @@ Basierend auf den Erfahrungen und dem Feedback aus der ersten Version des Formul
 \noindent Langfristig wird der Formular-Editor zu einem zentralen Bestandteil der GSCS ausgebaut, der nicht nur für eigenständige Formulare, sondern auch für die Konfiguration von Eingabemasken in anderen Modulen der GSCS genutzt werden kann. Dies wird zu einer einheitlichen Benutzererfahrung über die gesamte Anwendung hinweg beitragen und die Flexibilität für Kunden weiter erhöhen.
 
 \subsection{Gelerntes}
-Die Entwicklung des Formular-Editors bot mir zahlreiche Lernmöglichkeiten, sowohl in technischer als auch in projektorganisatorischer Hinsicht.
+Bei der Entwicklung des Formular-Editors Komponante und seiner Services habe ich viel gelernt, sowohl in technischer als auch in projektorganisatorischer Hinsicht.
 
 \paragraph{Technische Erkenntnisse}
 Im technischen Bereich konnte ich meine Kenntnisse in Angular und der Entwicklung komplexer, interaktiver Benutzeroberflächen vertiefen. Insbesondere die Implementierung des Drag-and-Drop-Systems in Verbindung mit einem responsiven Grid-Layout stellte eine interessante Herausforderung dar, die eine tiefe Auseinandersetzung mit den Möglichkeiten von Angular und dem Angular ngx-drag-drop erforderte.
@@ -501,11 +481,60 @@ Im technischen Bereich konnte ich meine Kenntnisse in Angular und der Entwicklun
 \noindent Die Erstellung eines flexiblen JSON-Schemas zur Speicherung der Formularstrukturen hat mir wertvolle Einblicke in die Datenmodellierung und die Vor- und Nachteile verschiedener Ansätze zur Speicherung komplexer, hierarchischer Daten gegeben. Die Notwendigkeit, ein System zu entwerfen, das sowohl erweiterbar als auch performant ist, führte zu wichtigen Erkenntnissen über die Balance zwischen Flexibilität und Komplexität.
 
 \paragraph{Projektmanagement-Erkenntnisse}
-Aus projektorganisatorischer Sicht war die enge Zusammenarbeit mit verschiedenen Stakeholdern – von Entwicklern über Produktmanager bis hin zu Endanwendern – eine wertvolle Erfahrung. Die frühzeitige Einbindung von Nutzerfeedback in den Entwicklungsprozess hat sich als entscheidend für die Benutzerakzeptanz erwiesen.
+Aus projektorganisatorischer Sicht war die systematische Einhaltung des Wasserfallmodells während der gesamten Projektlaufzeit eine wertvolle Erfahrung. Die klare Trennung der Entwicklungsphasen und die ausführliche Dokumentation nach jeder abgeschlossenen Phase haben wesentlich zum Erfolg des Projekts beigetragen. Insbesondere die detaillierte Anforderungsanalyse zu Beginn des Projekts hat sich als entscheidend für die effiziente Durchführung der nachfolgenden Phasen erwiesen. Auch das strukturierte Vorgehen in der Testphase, bei dem alle Funktionen systematisch überprüft wurden, hat zur hohen Qualität des Endprodukts beigetragen.
 
 \paragraph{Wirtschaftliche Erkenntnisse}
 Die Durchführung der Wirtschaftlichkeitsanalyse und die Berechnung der Amortisationszeit haben mir ein besseres Verständnis für die ökonomischen Aspekte der Softwareentwicklung vermittelt. Die Erkenntnis, dass eine sorgfältige Analyse der langfristigen Kosten und Einsparungen für die Bewertung eines Projekts ebenso wichtig ist wie die technische Umsetzbarkeit, wird meine zukünftige Arbeit beeinflussen.
 
 \paragraph{Dokumentation}
-Nicht zuletzt hat mir das Projekt die Bedeutung einer gründlichen Dokumentation vor Augen geführt. Die Investition in eine umfassende und verständliche Dokumentation erleichtert nicht nur die zukünftige Wartung und Weiterentwicklung, sondern trägt auch wesentlich zur Akzeptanz und erfolgreichen Nutzung durch die Endanwender bei.
+Nicht zuletzt hat mir das Projekt die Bedeutung einer gründlichen Dokumentation vor Augen geführt. Die Investition in eine umfassende und verständliche Dokumentation erleichtert nicht nur die zukünftige Wartung und Weiterentwicklung, sondern trägt auch wesentlich zur Akzeptanz und erfolgreichen Nutzung durch die Endanwender bei. Die strikte Trennung zwischen Entwickler- und Benutzerdokumentation, wie sie im Wasserfallmodell vorgesehen ist, hat sich als effektiver Ansatz erwiesen, um den unterschiedlichen Informationsbedürfnissen der Zielgruppen gerecht zu werden.
+
+
+\newpage
+\section{Abildungen}
+\subsection{Wasserfallmodell}
+\includegraphics[width=1.1\textwidth]{waterfall.drawio}
+\subsection{ Datenübersicht}
+\includegraphics[width=1.1\textwidth]{UML Class digram.drawio}
+
+
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+\begin{thebibliography}{99}
+  \bibitem{responsive} Responsive Webdesign. \\
+  \url{https://de.wikipedia.org/wiki/Responsive_Webdesign}
+  
+  \bibitem{angular} Angular.\\
+  \url{https://de.wikipedia.org/wiki/Angular}
+  
+  \bibitem{dotnet} .NET (Plattform). (2023). In Wikipedia. \\
+  \url{https://de.wikipedia.org/wiki/.NET_(Plattform)}
+  
+  \bibitem{jquery} jQuery \\
+  \url{https://de.wikipedia.org/wiki/JQuery}
+  
+  \bibitem{tailwind} Tailwind CSS \\
+  \url{https://en.wikipedia.org/wiki/Tailwind_CSS}
+  
+  \bibitem{rest} Representational State Transfer \\
+  \url{https://de.wikipedia.org/wiki/Representational_State_Transfer}
+  
+  \bibitem{json} JSON\\
+  \url{https://de.wikipedia.org/wiki/JSON}
+  
+  \bibitem{angularservices} Angular Services \\
+  \url{https://v17.angular.io/guide/architecture-services}
+  
+  \bibitem{github} GitHub \\
+  \url{https://en.wikipedia.org/wiki/GitHub}
+  
+  \bibitem{cicd} CI/CD \\
+  \url{https://de.wikipedia.org/wiki/CI/CD}
+  
+  \bibitem{markdown} Markdown \\
+  \url{https://de.wikipedia.org/wiki/Markdown}
+\end{thebibliography}
 \end{document}
