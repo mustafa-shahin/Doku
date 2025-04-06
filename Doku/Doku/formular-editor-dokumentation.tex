@@ -168,7 +168,7 @@ Der Formular-Editor wird als Komponente in die bestehende GSCS integriert und nu
   \item Migration bestehender Formulare in das neue System (dies erfolgt in einem Folgeprojekt)
 \end{itemize}
 
-Für das Speichern und Laden von Formularstrukturen werden die existierenden Datenbankstrukturen verwendet. Die Formularstruktur wird im JSON-Format in einer eigenen Spalte in der bestehenden Formulartabelle gespeichert.
+\noindent Für das Speichern und Laden von Formularstrukturen werden die existierenden Datenbankstrukturen verwendet. Die Formularstruktur wird im JSON-Format in einer eigenen Spalte in der bestehenden Formulartabelle gespeichert, wobei das JSON-Schema komplexe TypeScript-Interfaces wie FormField abbildet, die IDs, Typen, Spaltenbreiten, und weitere Metadaten enthalten.
 
 \section{Analyse}
 \subsection{Durchführung der Ist-Analyse}
@@ -192,7 +192,7 @@ Basierend auf den Erkenntnissen der Ist-Analyse und den Anforderungen der Stakeh
 \textbf{Funktionale Anforderungen:}
 \begin{itemize}
   \item Intuitive Drag-and-Drop-Oberfläche zur Erstellung und Bearbeitung von Formularen
-  \item Unterstützung folgender Feldtypen: Text, E-Mail, Passwort, Zahl, Datum, Zeit, Auswahlliste, Checkbox, Datei-Upload, Textbereich
+  \item Unterstützung folgender Feldtypen: Text, E-Mail, Passwort, Zahl, DatePicker (Datum), TimePicker (Zeit), Select (Auswahlliste), Checkbox, FileUpload (Datei-Upload), TextArea (Textbereich)
   \item Konfigurationsmöglichkeiten für jedes Feld: Label, Platzhaltertext, Standardwert, Pflichtfeld-Markierung
   \item Validierungsregeln für Eingabefelder (z.B. Mindest-/Höchstlänge, Zahlenbereich)
   \item Speichern und Laden von Formularvorlagen
@@ -289,22 +289,27 @@ Für die Speicherung der Formularstrukturen wurde ein flexibles JSON-Schema entw
 
 \noindent Um eine effiziente Bearbeitung von Formularen im Frontend zu ermöglichen, wurde ein Formularmodell für Angular entwickelt, das die Konvertierung zwischen dem JSON-Schema und den TypeScript-Objekten übernimmt. Dies vereinfacht die Implementierung des Drag-and-Drop-Editors und die Validierung der Formularstruktur.
 
+
 \subsection{Technischer Entwurf der Schnittstelle}
 Der Formular-Editor besteht aus mehreren Hauptkomponenten, die miteinander interagieren:
 
 \begin{itemize}
   \item Form-Canvas: Der Hauptbereich, in dem das Formular per Drag-and-Drop gestaltet wird
+  \item Jedes Formularfeld kann durch einen Resize-Handle an der rechten Seite in seiner Breite verändert werden. Die Implementierung nutzt die Bibliothek 'angular-resizable-element', um eine intuitive Größenänderung zu ermöglichen.
+  \item Ein zentraler BuilderService wurde implementiert, der die Layout-Berechnungen, Drag-and-Drop-Operationen und Validierung der Formularstruktur übernimmt.
   \item Field-Sidebar: Eine Seitenleiste mit verfügbaren Formularfeldern, die per Drag-and-Drop auf den Canvas gezogen werden können
   \item Properties-Panel: Ein Bereich zur Konfiguration der Eigenschaften des ausgewählten Formularfelds
   \item Preview-Mode: Eine Vorschau des aktuellen Formulars, wie es für den Endbenutzer erscheinen wird
   \item Toolbar: Eine Werkzeugleiste mit Aktionen wie Speichern, Laden und Zurücksetzen
 \end{itemize}
 
-\noindent Der Form-Canvas verwendet ein Grid-System, das auf 12 Spalten basiert, um responsive Layouts zu ermöglichen. Jedes Formularfeld kann eine oder mehrere Spalten einnehmen und kann per Drag-and-Drop neu positioniert werden.
+\noindent Der Form-Canvas nutzt ein auf 12 Spalten basierendes Grid-System. Jedes Formularfeld verfügt über eine columns-Eigenschaft, die angibt, wie viele dieser Spalten es beansprucht. Der BuilderService ermittelt automatisch die verbleibenden Platzkapazitäten und passt das Layout dynamisch entsprechend an.
 
 \noindent Die Kommunikation zwischen den Komponenten erfolgt über Angular-Services, die den Zustand des Formulars verwalten und Änderungen an alle beteiligten Komponenten propagieren. Für die Drag-and-Drop-Funktionalität wird die Bibliothek ngx-drag-drop verwendet, wobei das DndDropEvent zur Behandlung von Drop-Ereignissen dient
 
 \noindent Die Speicherung und Validierung der Formulare erfolgt über REST-API-Calls an das Backend. Die API-Schnittstelle wurde so gestaltet, dass sie sowohl den Speichervorgang als auch die Validierung der Formularstruktur unterstützt.
+
+\noindent Die Internationalisierung wird vollständig durch das Modul @ngx-translate/core unterstützt, wodurch alle Texte und Beschriftungen lokalisiert werden können.
 
 \section{Implementierung}
 \subsection{Initialisierung des Projekts}
@@ -319,7 +324,7 @@ Die Implementierung der Modellumwandlung umfasste die Erstellung von TypeScript-
 
 Ein zentraler Service wurde implementiert, der die Konvertierung zwischen dem JSON-Schema und den TypeScript-Objekten übernimmt. Dieser Service ist auch für die Validierung der Formularstruktur verantwortlich und stellt sicher, dass nur gültige Formulare gespeichert werden können.
 
-Die Modellklassen enthalten Methoden zur Manipulation der Formularstruktur, wie das Hinzufügen und Entfernen von Feldern, das Ändern von Feldeigenschaften und das Anpassen des Layouts. Diese Methoden werden von den UI-Komponenten aufgerufen, um Benutzeraktionen zu verarbeiten.
+\noindent Die Modellklassen enthalten Methoden zur Manipulation der Formularstruktur, wie das Hinzufügen und Entfernen von Feldern, das Ändern von Feldeigenschaften und das Anpassen des Layouts. Diese Methoden werden von den UI-Komponenten aufgerufen, um Benutzeraktionen zu verarbeiten.
 
 \subsection{Implementierung der REST-API-Aufrufe}
 Für die Kommunikation mit dem Backend wurden Angular-Services implementiert, die die REST-API-Aufrufe kapseln. Diese Services verwenden das HttpClient-Modul von Angular für die HTTP-Kommunikation und bieten eine typsichere Schnittstelle für die Interaktion mit der API.
@@ -345,7 +350,7 @@ Zur Unterstützung des Formular-Editors wurden mehrere automatische Abläufe imp
   \item Versionierung: Bei jedem Speichervorgang wird eine neue Version des Formulars erstellt, um Änderungen nachverfolgen zu können
 \end{itemize}
 
-Diese automatischen Abläufe wurden als Teil der Angular-Services implementiert und sind eng mit dem Zustandsmanagement des Editors verbunden.
+\noindent Diese automatischen Abläufe wurden als Teil der Angular-Services implementiert und sind eng mit dem Zustandsmanagement des Editors verbunden.
 
 \subsection{Integration in das bestehende System}
 Die Integration des Formular-Editors in die bestehende GSCS erforderte eine sorgfältige Abstimmung mit anderen Komponenten und Modulen. Folgende Integrationsschritte wurden durchgeführt:
@@ -377,9 +382,9 @@ Die Konfigurationsoptionen werden in der Datenbank gespeichert und beim Start de
 \subsection{Initiales Deployment auf einem Testsystem}
 Nach Abschluss der Implementierung wurde der Formular-Editor auf einem Testsystem deployt, um eine umfassende Validierung der Funktionalität und Integration durchzuführen. Das Testsystem ist eine Kopie des Produktivsystems mit realistischen Testdaten, um möglichst produktionsnahe Bedingungen zu simulieren.
 
-Für das Deployment wurden die in der GSCS etablierten CI/CD-Prozesse verwendet, die eine automatisierte Bereitstellung und Konfiguration der Anwendung ermöglichen. Nach dem Deployment wurde eine initiale Konfiguration des Editors vorgenommen, um die grundlegende Funktionalität zu überprüfen.
+\noindent Für das Deployment wurden die in der GSCS etablierten CI/CD-Prozesse verwendet, die eine automatisierte Bereitstellung und Konfiguration der Anwendung ermöglichen. Nach dem Deployment wurde eine initiale Konfiguration des Editors vorgenommen, um die grundlegende Funktionalität zu überprüfen.
 
-Der Deploymentprozess wurde detailliert dokumentiert, um eine reibungslose Bereitstellung auf anderen Umgebungen zu gewährleisten.
+\noindent Der Deploymentprozess wurde detailliert dokumentiert, um eine reibungslose Bereitstellung auf anderen Umgebungen zu gewährleisten.
 
 \subsection{Übertragungstests}
 Nach dem initialen Deployment wurden umfangreiche Tests durchgeführt, um die Funktionalität des Formular-Editors zu validieren. Die Tests umfassten folgende Bereiche:
@@ -399,9 +404,9 @@ Während der Tests wurden einige Probleme identifiziert, insbesondere bei der Pe
 \subsection{Initiales Deployment auf dem Produktivsystem}
 Nach erfolgreicher Validierung auf dem Testsystem wurde der Formular-Editor auf dem Produktivsystem deployt. Der Deploymentprozess folgte dem gleichen Verfahren wie beim Testsystem, mit zusätzlichen Sicherheitsmaßnahmen aufgrund der höheren Kritikalität des Produktivsystems.
 
-Das Deployment wurde in einer Phase mit geringer Benutzeraktivität durchgeführt, um potenzielle Auswirkungen auf den laufenden Betrieb zu minimieren. Nach dem Deployment wurde eine umfassende Funktionsprüfung durchgeführt, um sicherzustellen, dass alle Funktionen wie erwartet arbeiten.
+\noindent Das Deployment wurde in einer Phase mit geringer Benutzeraktivität durchgeführt, um potenzielle Auswirkungen auf den laufenden Betrieb zu minimieren. Nach dem Deployment wurde eine umfassende Funktionsprüfung durchgeführt, um sicherzustellen, dass alle Funktionen wie erwartet arbeiten.
 
-Den ersten Benutzern wurde der Zugriff auf den Editor schrittweise gewährt, beginnend mit einer Pilotgruppe, um Feedback zu sammeln und potenzielle Probleme zu identifizieren, bevor die Funktion allen Benutzern zur Verfügung gestellt wurde.
+\noindent Den ersten Benutzern wurde der Zugriff auf den Editor schrittweise gewährt, beginnend mit einer Pilotgruppe, um Feedback zu sammeln und potenzielle Probleme zu identifizieren, bevor die Funktion allen Benutzern zur Verfügung gestellt wurde.
 
 \subsection{Tests mit Realdaten}
 Nach dem Deployment auf dem Produktivsystem wurden Tests mit realen Kundendaten durchgeführt, um sicherzustellen, dass der Formular-Editor unter realen Bedingungen korrekt funktioniert. Diese Tests umfassten:
@@ -413,7 +418,7 @@ Nach dem Deployment auf dem Produktivsystem wurden Tests mit realen Kundendaten 
   \item Test der Integration mit anderen Geschäftsprozessen, wie Datenexport und Berichtswesen
 \end{itemize}
 
-Die Tests mit Realdaten bestätigten die grundlegende Funktionalität des Editors und lieferten wertvolles Feedback für zukünftige Verbesserungen. Insbesondere wurden Anforderungen für zusätzliche Feldtypen und Validierungsregeln identifiziert, die in zukünftigen Versionen implementiert werden sollen.
+\noindent Die Tests mit Realdaten bestätigten die grundlegende Funktionalität des Editors und lieferten wertvolles Feedback für zukünftige Verbesserungen. Insbesondere wurden Anforderungen für zusätzliche Feldtypen und Validierungsregeln identifiziert, die in zukünftigen Versionen implementiert werden sollen.
 
 \section{Interne Dokumentation}
 \subsection{Entwicklerdokumentation}
@@ -427,9 +432,9 @@ Zur Unterstützung der zukünftigen Wartung und Weiterentwicklung des Formular-E
   \item Erweiterungsleitfaden: Anleitung zur Erweiterung des Editors um neue Feldtypen oder Funktionen
 \end{itemize}
 
-Die Dokumentation wurde in Markdown erstellt und im internen Wiki der GSS-GmbH veröffentlicht. Zusätzlich wurden die relevanten Codeabschnitte mit ausführlichen Kommentaren versehen, um das Verständnis und die Wartbarkeit des Codes zu verbessern.
+\noindent Die Dokumentation wurde in Markdown erstellt und im internen Wiki der GSS-GmbH veröffentlicht. Zusätzlich wurden die relevanten Codeabschnitte mit ausführlichen Kommentaren versehen, um das Verständnis und die Wartbarkeit des Codes zu verbessern.
 
-Die Entwicklerdokumentation wurde mit dem Entwicklungsteam abgestimmt und in einem Review-Prozess validiert, um sicherzustellen, dass alle relevanten Aspekte abgedeckt sind und die Dokumentation verständlich und vollständig ist.
+\noindent Die Entwicklerdokumentation wurde mit dem Entwicklungsteam abgestimmt und in einem Review-Prozess validiert, um sicherzustellen, dass alle relevanten Aspekte abgedeckt sind und die Dokumentation verständlich und vollständig ist.
 
 \subsection{Benutzerhandbuch}
 Neben der Entwicklerdokumentation wurde ein umfassendes Benutzerhandbuch erstellt, das sich an die Endbenutzer des Formular-Editors richtet. Das Benutzerhandbuch enthält folgende Abschnitte:
@@ -445,23 +450,23 @@ Neben der Entwicklerdokumentation wurde ein umfassendes Benutzerhandbuch erstell
   \item Fehlerbehebung: Lösungen für häufige Probleme
 \end{itemize}
 
-Das Benutzerhandbuch wurde mit zahlreichen Screenshots und Beispielen angereichert, um die Verständlichkeit zu erhöhen. Es wurde in einem iterativen Prozess mit Feedback von Testbenutzern entwickelt, um sicherzustellen, dass es für die Zielgruppe optimal geeignet ist.
+\noindent Das Benutzerhandbuch wurde mit zahlreichen Screenshots und Beispielen angereichert, um die Verständlichkeit zu erhöhen. Es wurde in einem iterativen Prozess mit Feedback von Testbenutzern entwickelt, um sicherzustellen, dass es für die Zielgruppe optimal geeignet ist.
 
-Das Benutzerhandbuch wurde in verschiedenen Formaten bereitgestellt: als PDF zum Ausdrucken, als HTML-Version für die Online-Nutzung und als integrierte Hilfe direkt im Formular-Editor. Letztere bietet kontextsensitive Hilfe, die direkt zu den relevanten Abschnitten des Handbuchs führt.
+\noindent Das Benutzerhandbuch wurde in verschiedenen Formaten bereitgestellt: als PDF zum Ausdrucken, als HTML-Version für die Online-Nutzung und als integrierte Hilfe direkt im Formular-Editor. Letztere bietet kontextsensitive Hilfe, die direkt zu den relevanten Abschnitten des Handbuchs führt.
 
 \section{Fazit}
 \subsection{Soll-/Ist-Vergleich}
 Die Implementierung des Formular-Editors wurde größtenteils gemäß den ursprünglichen Anforderungen und dem geplanten Zeitrahmen abgeschlossen. Ein detaillierter Vergleich der Soll- und Ist-Werte zeigt sowohl Erfolge als auch Herausforderungen des Projekts.
 
-\textbf{Funktionsumfang:} Alle in der Anforderungsanalyse definierten Kernfunktionen wurden erfolgreich implementiert. Zusätzlich konnten einige ursprünglich nicht geplante Funktionen, wie die Versionierung von Formularen, realisiert werden. Einige weniger kritische Funktionen, wie die Integration mit dem Reportingsystem, wurden aufgrund von Zeitbeschränkungen auf eine spätere Version verschoben.
+\noindent \textbf{Funktionsumfang:} Alle in der Anforderungsanalyse definierten Kernfunktionen wurden erfolgreich implementiert. Zusätzlich konnten einige ursprünglich nicht geplante Funktionen, wie die Versionierung von Formularen, realisiert werden. Einige weniger kritische Funktionen, wie die Integration mit dem Reportingsystem, wurden aufgrund von Zeitbeschränkungen auf eine spätere Version verschoben.
 
-\textbf{Zeitplan:} Das Projekt wurde mit einer Verzögerung von zwei Wochen abgeschlossen. Die Hauptgründe für diese Verzögerung waren technische Herausforderungen bei der Integration des Drag-and-Drop-Systems mit dem responsiven Grid-Layout und unvorhergesehene Komplikationen bei der Validierung komplexer Formulare. Diese Verzögerung lag jedoch innerhalb des vorgesehenen Puffers und hatte keine Auswirkungen auf die geplante Release-Planung.
+\noindent \textbf{Zeitplan:} Das Projekt wurde mit einer Verzögerung von zwei Wochen abgeschlossen. Die Hauptgründe für diese Verzögerung waren technische Herausforderungen bei der Integration des Drag-and-Drop-Systems mit dem responsiven Grid-Layout und unvorhergesehene Komplikationen bei der Validierung komplexer Formulare. Diese Verzögerung lag jedoch innerhalb des vorgesehenen Puffers und hatte keine Auswirkungen auf die geplante Release-Planung.
 
-\textbf{Ressourcenaufwand:} Der tatsächliche Personalaufwand betrug 92 Stunden, was einer Abweichung von 15% gegenüber den geplanten 80 Stunden entspricht. Diese Abweichung ist hauptsächlich auf die oben genannten technischen Herausforderungen zurückzuführen. Die zusätzlichen Kosten wurden jedoch durch Einsparungen bei den Testaufwänden teilweise kompensiert, sodass das Gesamtbudget nur geringfügig überschritten wurde.
+\noindent \textbf{Ressourcenaufwand:} Der tatsächliche Personalaufwand betrug 92 Stunden, was einer Abweichung von 15% gegenüber den geplanten 80 Stunden entspricht. Diese Abweichung ist hauptsächlich auf die oben genannten technischen Herausforderungen zurückzuführen. Die zusätzlichen Kosten wurden jedoch durch Einsparungen bei den Testaufwänden teilweise kompensiert, sodass das Gesamtbudget nur geringfügig überschritten wurde.
 
-\textbf{Qualität:} Die Qualitätsziele des Projekts wurden größtenteils erreicht. Die Benutzerfreundlichkeit wurde in Tests mit einer Durchschnittsbewertung von 4,2 von 5 Punkten bewertet, was über dem Zielwert von 4,0 liegt. Die Performance-Ziele wurden für einfache bis mittlere Formulare erreicht, bei sehr komplexen Formularen mit mehr als 30 Feldern wurden jedoch längere Ladezeiten festgestellt. Dies wurde als Verbesserungspotential für zukünftige Versionen dokumentiert.
+\noindent \textbf{Qualität:} Die Qualitätsziele des Projekts wurden größtenteils erreicht. Die Benutzerfreundlichkeit wurde in Tests mit einer Durchschnittsbewertung von 4,2 von 5 Punkten bewertet, was über dem Zielwert von 4,0 liegt. Die Performance-Ziele wurden für einfache bis mittlere Formulare erreicht, bei sehr komplexen Formularen mit mehr als 30 Feldern wurden jedoch längere Ladezeiten festgestellt. Dies wurde als Verbesserungspotential für zukünftige Versionen dokumentiert.
 
-\textbf{Benutzerakzeptanz:} Die ersten Rückmeldungen von Benutzern nach dem Release waren überwiegend positiv. Insbesondere wurde die intuitive Bedienung und die Flexibilität bei der Gestaltung von Formularen gelobt. Einige Benutzer wünschten sich zusätzliche Feldtypen und erweiterte Validierungsmöglichkeiten, die in zukünftigen Versionen berücksichtigt werden sollen.
+\noindent \textbf{Benutzerakzeptanz:} Die ersten Rückmeldungen von Benutzern nach dem Release waren überwiegend positiv. Insbesondere wurde die intuitive Bedienung und die Flexibilität bei der Gestaltung von Formularen gelobt. Einige Benutzer wünschten sich zusätzliche Feldtypen und erweiterte Validierungsmöglichkeiten, die in zukünftigen Versionen berücksichtigt werden sollen.
 
 \subsection{Ausblick}
 Basierend auf den Erfahrungen und dem Feedback aus der ersten Version des Formular-Editors wurden mehrere Ansatzpunkte für zukünftige Erweiterungen und Verbesserungen identifiziert:
@@ -475,9 +480,9 @@ Basierend auf den Erfahrungen und dem Feedback aus der ersten Version des Formul
   \item Erweiterung um Mehrsprachigkeit für internationale Kunden
 \end{itemize}
 
-Für die nächste Version ist bereits ein Feature-Set definiert, das auf Basis der Prioritätsbewertung durch Produktmanagement und Kundenfeedback ausgewählt wurde. Die Entwicklung dieser Version ist für das kommende Quartal geplant.
+\noindent Für die nächste Version ist bereits ein Feature-Set definiert, das auf Basis der Prioritätsbewertung durch Produktmanagement und Kundenfeedback ausgewählt wurde. Die Entwicklung dieser Version ist für das kommende Quartal geplant.
 
-Langfristig wird der Formular-Editor zu einem zentralen Bestandteil der GSCS ausgebaut, der nicht nur für eigenständige Formulare, sondern auch für die Konfiguration von Eingabemasken in anderen Modulen der GSCS genutzt werden kann. Dies wird zu einer einheitlichen Benutzererfahrung über die gesamte Anwendung hinweg beitragen und die Flexibilität für Kunden weiter erhöhen.
+\noindent Langfristig wird der Formular-Editor zu einem zentralen Bestandteil der GSCS ausgebaut, der nicht nur für eigenständige Formulare, sondern auch für die Konfiguration von Eingabemasken in anderen Modulen der GSCS genutzt werden kann. Dies wird zu einer einheitlichen Benutzererfahrung über die gesamte Anwendung hinweg beitragen und die Flexibilität für Kunden weiter erhöhen.
 
 \subsection{Gelerntes}
 Die Entwicklung des Formular-Editors bot mir zahlreiche Lernmöglichkeiten, sowohl in technischer als auch in projektorganisatorischer Hinsicht.
@@ -485,7 +490,7 @@ Die Entwicklung des Formular-Editors bot mir zahlreiche Lernmöglichkeiten, sowo
 \paragraph{Technische Erkenntnisse}
 Im technischen Bereich konnte ich meine Kenntnisse in Angular und der Entwicklung komplexer, interaktiver Benutzeroberflächen vertiefen. Insbesondere die Implementierung des Drag-and-Drop-Systems in Verbindung mit einem responsiven Grid-Layout stellte eine interessante Herausforderung dar, die eine tiefe Auseinandersetzung mit den Möglichkeiten von Angular und dem Angular CDK erforderte.
 
-Die Erstellung eines flexiblen JSON-Schemas zur Speicherung der Formularstrukturen hat mir wertvolle Einblicke in die Datenmodellierung und die Vor- und Nachteile verschiedener Ansätze zur Speicherung komplexer, hierarchischer Daten gegeben. Die Notwendigkeit, ein System zu entwerfen, das sowohl erweiterbar als auch performant ist, führte zu wichtigen Erkenntnissen über die Balance zwischen Flexibilität und Komplexität.
+\noindent Die Erstellung eines flexiblen JSON-Schemas zur Speicherung der Formularstrukturen hat mir wertvolle Einblicke in die Datenmodellierung und die Vor- und Nachteile verschiedener Ansätze zur Speicherung komplexer, hierarchischer Daten gegeben. Die Notwendigkeit, ein System zu entwerfen, das sowohl erweiterbar als auch performant ist, führte zu wichtigen Erkenntnissen über die Balance zwischen Flexibilität und Komplexität.
 
 \paragraph{Projektmanagement-Erkenntnisse}
 Aus projektorganisatorischer Sicht war die enge Zusammenarbeit mit verschiedenen Stakeholdern – von Entwicklern über Produktmanager bis hin zu Endanwendern – eine wertvolle Erfahrung. Die frühzeitige Einbindung von Nutzerfeedback in den Entwicklungsprozess hat sich als entscheidend für die Benutzerakzeptanz erwiesen.

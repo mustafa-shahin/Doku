@@ -8,34 +8,34 @@
 \contentsline {section}{\numberline {2}Analyse}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Durchführung der Ist-Analyse}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Durchführung der Soll-Analyse}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Wirtschaftlichkeitsanalyse und Amortisationsrechnung}{4}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Make-or-Buy Entscheidung}{4}{subsubsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3}Wirtschaftlichkeitsanalyse und Amortisationsrechnung}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Make-or-Buy Entscheidung}{5}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Projektkosten}{5}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Amortisationsdauer}{5}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3}Amortisationsdauer}{6}{subsubsection.2.3.3}%
 \contentsline {section}{\numberline {3}Entwurf}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Verfügbare Datensätze ermitteln}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Entwurf der Datenmodellumwandlung}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Technischer Entwurf der Schnittstelle}{7}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Implementierung}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Initialisierung des Projekts}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Implementierung der Modellumwandlung}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Implementierung der Modellumwandlung}{8}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Implementierung der REST-API-Aufrufe}{8}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Implementierung der automatischen Abläufe}{8}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Integration in das bestehende System}{9}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Implementierung der Konfiguration}{9}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Abnahme}{9}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Initiales Deployment auf einem Testsystem}{9}{subsection.5.1}%
+\contentsline {section}{\numberline {5}Abnahme}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Initiales Deployment auf einem Testsystem}{10}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Übertragungstests}{10}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Initiales Deployment auf dem Produktivsystem}{10}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Tests mit Realdaten}{10}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}Tests mit Realdaten}{11}{subsection.5.4}%
 \contentsline {section}{\numberline {6}Interne Dokumentation}{11}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Entwicklerdokumentation}{11}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Benutzerhandbuch}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Benutzerhandbuch}{12}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Fazit}{12}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Soll-/Ist-Vergleich}{12}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ausblick}{12}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Ausblick}{13}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Gelerntes}{13}{subsection.7.3}%
 \contentsline {paragraph}{Technische Erkenntnisse}{13}{section*.1}%
-\contentsline {paragraph}{Projektmanagement-Erkenntnisse}{13}{section*.2}%
-\contentsline {paragraph}{Wirtschaftliche Erkenntnisse}{13}{section*.3}%
+\contentsline {paragraph}{Projektmanagement-Erkenntnisse}{14}{section*.2}%
+\contentsline {paragraph}{Wirtschaftliche Erkenntnisse}{14}{section*.3}%
 \contentsline {paragraph}{Dokumentation}{14}{section*.4}%
