@@ -15,22 +15,33 @@
 \usepackage{bookmark} 
 \usepackage{tocloft}
 \usepackage{url}
+\usepackage{listings}
 \usepackage{xcolor}
 \usepackage[hang,flushmargin]{footmisc}
 
-% Arial-Schrift einrichten
-% Methode 1: mit helvet (Helvetica ist sehr ähnlich zu Arial)
+\lstdefinelanguage{TypeScript}{
+  language=Java,
+  morekeywords={
+    interface, implements, private, public, protected, readonly, abstract,
+    type, namespace, declare, module, from, as, any, number, boolean, string,
+    void, null, undefined, never, unknown
+  }
+}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+  breaklines=true,
+  frame=single,
+  captionpos=b,
+  language=TypeScript
+}
 \usepackage[scaled=0.92]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 
-% Alternativ für echtes Arial mit XeLaTeX oder LuaLaTeX:
-% Auskommentieren Sie die zwei obigen Zeilen und entkommentieren Sie diese:
-% \usepackage{fontspec}
-% \setmainfont{Arial}
+\usepackage{hyperref}
 
-\usepackage{hyperref} % Hyperref sollte als letztes Paket geladen werden
-
-% Einstellungen
 \renewcommand{\footnoterule}{\vspace*{0.5em}\hrule width \textwidth height 0.4pt \vspace*{0.6em}}
 
 \geometry{
@@ -42,14 +53,13 @@
   footskip=1.3cm
 }
 
-% hypersetup-Konfiguration
 \hypersetup{
     bookmarks=true,
     bookmarksnumbered=true,
     colorlinks=true,
     linkcolor=black,
     citecolor=black,
-    urlcolor=blue,  % URLs werden blau dargestellt
+    urlcolor=blue,  
     pdftitle={Dokumentation zur betrieblichen Projektarbeit},
     pdfauthor={Mustafa Shahin},
     pdfsubject={Formular-Editor Schnittstelle},
@@ -58,7 +68,6 @@
     pdfdisplaydoctitle=true
 }
 
-% URL-Stil auf Sans-Serif (Arial/Helvetica) setzen
 \urlstyle{sf}
 
 \singlespacing
@@ -499,6 +508,248 @@ Nicht zuletzt hat mir das Projekt die Bedeutung einer gründlichen Dokumentation
 
 
 \newpage
+\subsection{ Drag Operation}
+\includegraphics[width=1.1\textwidth]{drag.drawio}
+\newpage
+
+
+
+\subsection{ Drop Operation}
+\includegraphics[width=1.1\textwidth]{drop.drawio}
+\newpage
+
+\subsection{ Drop and Drop Operation}
+\includegraphics[width=1.1\textwidth]{DragAndDrop.drawio}
+\newpage
+
+\section{Code Snippets}
+\renewcommand{\lstlistingname}{\texttt{Drop Function in Builder Service}}
+\begin{lstlisting}[language=TypeScript, caption={\texttt{handleSimpleDrop} function}]
+  /**
+   * handler for drop events creating new items
+   */
+  handleSimpleDrop<T extends { columns: number; id?: string; [key: string]: any }>(
+    event: DndDropEvent,
+    items: T[],
+    getComponentTypes: () => string[],
+    createItemFn: (type: string) => T,
+    maxColumns: number = 12,
+  ): { updatedItems: T[]; newItem: T | null } {
+    const updatedItems = [...items];
+    if (!event?.data?.type?.startsWith('component:')) {
+      return { updatedItems, newItem: null };
+    }
+    const componentType = event.data.type.split(':')[1];
+    if (!getComponentTypes().includes(componentType)) {
+      return { updatedItems, newItem: null };
+    }
+    const newItem = createItemFn(componentType);
+    if (updatedItems.length === 0) {
+      newItem.columns = Math.min(6, maxColumns);
+      updatedItems.push(newItem);
+      return { updatedItems, newItem };
+    }
+    const layout = this.getLayout(updatedItems);
+    const lastRow = layout.rows[layout.rows.length - 1];
+    const remainingColumns = maxColumns - lastRow.usedColumns;
+    if (remainingColumns >= 3) {
+      const lastItemIndex = lastRow.itemIndexes[lastRow.itemIndexes.length - 1];
+      newItem.columns = Math.min(remainingColumns, 6);
+      updatedItems.splice(lastItemIndex + 1, 0, newItem);
+    } else {
+      newItem.columns = Math.min(6, maxColumns);
+      updatedItems.push(newItem);
+    }
+    return { updatedItems, newItem };
+  }
+\end{lstlisting}
+\renewcommand{\lstlistingname}{\texttt{Aufruf von handleSimpleDrop in Canvas Kompopnente }}
+\begin{lstlisting}[language=TypeScript, caption={\texttt{handleSimpleDrop} function}]
+  onDrop(event: DndDropEvent): void {
+    const result = this.builderService.handleSimpleDrop(
+      event,
+      this.fields,
+      () => this.componentsHelper.getComponentTypes(),
+      (type) => this.fieldManager.createField(type as FormComponentType),
+      this.MAX_COLUMNS,
+    );
+    if (!result.newItem) return;
+    this.fields = result.updatedItems;
+    this.updatePlaceholderSize();
+    this.selectField(result.newItem.id);
+    this.cdr.detectChanges();
+  }
+}
+\end{lstlisting}
+
+
+
+
+\newpage
+\renewcommand{\lstlistingname}{\texttt{Resize Function in Builder Service}}
+\begin{lstlisting}[language=TypeScript, caption={\texttt{handleSimpleDrop} function}]
+ /**
+   * resize end handler
+   */
+  handleResize<T extends { columns: number; [key: string]: any }>(
+    event: ResizeEvent,
+    itemId: string,
+    items: T[],
+    designerViewportElement: ElementRef<HTMLDivElement>,
+    idProperty: string = 'id',
+    maxColumns: number = this.MIN_COLUMN,
+    minColumns: number = this.GRID_COLUMNS,
+  ): number {
+    if (!designerViewportElement?.nativeElement || !event.rectangle?.width) {
+      return -1;
+    }
+
+    // Find the item
+    const itemIndex = items.findIndex((item) => item[idProperty] === itemId);
+    if (itemIndex === -1) {
+      return -1;
+    }
+    // Calculate new column span based on the resize event
+    const containerWidth = designerViewportElement.nativeElement.clientWidth;
+    const columnWidth = containerWidth / maxColumns;
+    const newColumnSpan = Math.round(Number(event.rectangle.width) / columnWidth);
+    // Constrain to valid range
+    const columnSpan = Math.max(minColumns, Math.min(newColumnSpan, maxColumns));
+    // Update the item's columns
+    items[itemIndex].columns = columnSpan;
+    return columnSpan;
+  }
+\end{lstlisting}
+
+\renewcommand{\lstlistingname}{\texttt{Aufruf von handleResize in Canvas Kompopnente}}
+\begin{lstlisting}[language=TypeScript, caption={\texttt{handleSimpleDrop} function}]
+  resizeEnd(event: ResizeEvent, fieldId: string): void {
+    if (!this.designerViewportElement?.nativeElement || !event.rectangle?.width) {
+      this.isResizing = false;
+      this.currentlyResizingFieldId = undefined;
+      return;
+    }
+    const newColumnSpan = this.builderService.handleResize(
+      event,
+      fieldId,
+      this.fields,
+      this.designerViewportElement,
+      'id',
+      this.MAX_COLUMNS,
+      this.MIN_COLUMN,
+    );
+    if (newColumnSpan > 0) {
+      this.updatePlaceholderSize();
+    }
+    this.isResizing = false;
+    this.currentlyResizingFieldId = undefined;
+    this.cdr.detectChanges();
+  }
+\end{lstlisting}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \phantomsection
 \addcontentsline{toc}{section}{Literaturverzeichnis}
