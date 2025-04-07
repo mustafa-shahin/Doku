@@ -45,5 +45,7 @@
 \contentsline {subsection}{\numberline {8.3} Drag Operation}{17}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4} Drop Operation}{18}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5} Drop and Drop Operation}{19}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Ausschnitt Markdown Entwicklerdokumentation}{20}{subsection.8.6}%
 \contentsline {section}{\numberline {9}Code Snippets}{20}{section.9}%
-\contentsline {section}{Literaturverzeichnis}{22}{section*.5}%
+\contentsline {section}{\numberline {10}Detaillierte Zeitplanung}{23}{section.10}%
+\contentsline {section}{Literaturverzeichnis}{23}{section*.5}%
