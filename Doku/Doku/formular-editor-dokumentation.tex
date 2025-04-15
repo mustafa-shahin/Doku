@@ -2,8 +2,6 @@
 
 % Pakete laden
 \usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -18,6 +16,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage[hang,flushmargin]{footmisc}
+\usepackage{fontspec}
+\setmainfont{Arial}
 
 \lstdefinelanguage{TypeScript}{
   language=Java,
@@ -37,8 +37,6 @@
   captionpos=b,
   language=TypeScript
 }
-\usepackage[scaled=0.92]{helvet}
-\renewcommand{\familydefault}{\sfdefault}
 
 \usepackage{hyperref}
 
@@ -99,7 +97,7 @@
 \vspace{0.5cm}
 {\Large\textbf{Implementierung eines dynamischen Formularbaukastens}}\\
 \vspace{0.1cm}
-{\Large\textbf{für die GSCS der Green Solutions Software GmbH}}\\
+{\Large\textbf{für die Cloud Software der Green Solutions Software GmbH}}\\
 \end{center}
 
 \vspace{0.3cm}
@@ -133,7 +131,7 @@
 
 \section{Einleitung}
 \subsection{Projektumfeld}
-Die Green Solutions Software GmbH entwickelt und betreibt die green solutions cloud software (GSCS) als zentrale Software für die grüne Branche\footnote{Grüne Branche: Bezeichnung für den Wirtschaftsbereich, welcher unter anderem Baumschulen und Gartenhäuser beinhaltet.}. Im Rahmen der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formularbaukasten entwickelt werden, der es den Kunden ermöglicht, ohneFachkentnisse der Programmierung eigene Formulare zu erstellen und zu verwalten.Im Rahmen der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formularbaukasten entwickelt werdenImplementierung eines dynamischen Formularbaukastens.
+Die Green Solutions Software GmbH entwickelt und betreibt die Green Solutions Cloud Software (GSCS) als zentrale Software für die grüne Branche\footnote{Grüne Branche: Bezeichnung für den Wirtschaftsbereich, welcher unter anderem Baumschulen und Gartenhäuser beinhaltet.}. Im Rahmen der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formularbaukasten entwickelt werden, der es den Kunden ermöglicht, ohneFachkentnisse der Programmierung eigene Formulare zu erstellen und zu verwalten.Im Rahmen der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formularbaukasten entwickelt werdenImplementierung eines dynamischen Formularbaukastens.
 
 \noindent Die GSCS stellt verschiedene vorgefertigte Formulare für unterschiedliche Anwendungsfälle zur Verfügung, deren Anpassung jedoch Entwicklungsressourcen erfordert und aufgrund der begrenzten Individualisierbarkeit nur eingeschränkt möglich ist.
 

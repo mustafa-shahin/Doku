@@ -13,40 +13,40 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Make-or-Buy Entscheidung}{6}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Projektkosten}{7}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}Amortisationsdauer}{7}{subsubsection.2.3.3}%
-\contentsline {section}{\numberline {3}Entwurf}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Verfügbare Datensätze ermitteln}{7}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Entwurf}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Verfügbare Datensätze ermitteln}{8}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Entwurf der Datenmodellumwandlung}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Technischer Entwurf der Schnittstelle}{8}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Implementierung}{9}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Initialisierung des Projekts}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Implementierung der Modellumwandlung}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Implementierung der automatischen Abläufe}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.2}Implementierung der Modellumwandlung}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Implementierung der automatischen Abläufe}{10}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Integration in das bestehende System}{10}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Implementierung der Konfiguration}{10}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Abnahme}{10}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Initiales Deployment auf einem Testsystem}{10}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Übertragungstests}{10}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Initiales Deployment auf dem Produktivsystem}{11}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Tests mit Realdaten}{11}{subsection.5.4}%
+\contentsline {section}{\numberline {5}Abnahme}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Initiales Deployment auf einem Testsystem}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Übertragungstests}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Initiales Deployment auf dem Produktivsystem}{12}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Tests mit Realdaten}{12}{subsection.5.4}%
 \contentsline {section}{\numberline {6}Interne Dokumentation}{12}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Entwicklerdokumentation}{12}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Benutzerhandbuch}{12}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Benutzerhandbuch}{13}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Fazit}{13}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Soll-/Ist-Vergleich}{13}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ausblick}{13}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Ausblick}{14}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Gelerntes}{14}{subsection.7.3}%
 \contentsline {paragraph}{Technische Erkenntnisse}{14}{section*.1}%
-\contentsline {paragraph}{Projektmanagement-Erkenntnisse}{14}{section*.2}%
-\contentsline {paragraph}{Wirtschaftliche Erkenntnisse}{14}{section*.3}%
-\contentsline {paragraph}{Dokumentation}{14}{section*.4}%
-\contentsline {section}{\numberline {8}Abildungen}{15}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Wasserfallmodell}{15}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2} Datenübersicht}{16}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3} Drag Operation}{17}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4} Drop Operation}{18}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5} Drop and Drop Operation}{19}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Ausschnitt Markdown Entwicklerdokumentation}{20}{subsection.8.6}%
-\contentsline {subsection}{\numberline {8.7}Form Builder}{21}{subsection.8.7}%
-\contentsline {section}{\numberline {9}Code Snippets}{22}{section.9}%
-\contentsline {section}{\numberline {10}Detaillierte Zeitplanung}{24}{section.10}%
-\contentsline {section}{Literaturverzeichnis}{24}{section*.5}%
+\contentsline {paragraph}{Projektmanagement-Erkenntnisse}{15}{section*.2}%
+\contentsline {paragraph}{Wirtschaftliche Erkenntnisse}{15}{section*.3}%
+\contentsline {paragraph}{Dokumentation}{15}{section*.4}%
+\contentsline {section}{\numberline {8}Abildungen}{16}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Wasserfallmodell}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2} Datenübersicht}{17}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3} Drag Operation}{18}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4} Drop Operation}{19}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5} Drop and Drop Operation}{20}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Ausschnitt Markdown Entwicklerdokumentation}{21}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Form Builder}{22}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Code Snippets}{23}{section.9}%
+\contentsline {section}{\numberline {10}Detaillierte Zeitplanung}{25}{section.10}%
+\contentsline {section}{Literaturverzeichnis}{25}{section*.5}%
