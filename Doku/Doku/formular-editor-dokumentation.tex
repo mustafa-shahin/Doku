@@ -62,8 +62,8 @@
     urlcolor=blue,  
     pdftitle={Dokumentation zur betrieblichen Projektarbeit},
     pdfauthor={Mustafa Shahin},
-    pdfsubject={Formular-Editor Schnittstelle},
-    pdfkeywords={Angular, Formular-Editor, GSCS},
+    pdfsubject={Formularbaukasten},
+    pdfkeywords={Angular, Formularbaukaten, GSCS},
     pdfstartview={FitH},
     pdfdisplaydoctitle=true
 }
@@ -77,7 +77,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\includegraphics[height=1cm]{green_solutions_logo}}
-\fancyhead[L]{Formular-Editor Schnittstelle}
+\fancyhead[L]{Formularbaukasten}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -95,9 +95,9 @@
 \vspace{1cm}
 {\Large\textbf{Dokumentation zur betrieblichen Projektarbeit}}\\
 \vspace{1cm}
-{\Huge\textbf{Formular-Editor Schnittstelle}}\\
+{\Huge\textbf{Formularbaukasten}}\\
 \vspace{0.5cm}
-{\Large\textbf{Implementierung eines dynamischen Formular-Editors}}\\
+{\Large\textbf{Implementierung eines dynamischen Formularbaukastens}}\\
 \vspace{0.1cm}
 {\Large\textbf{für die GSCS der Green Solutions Software GmbH}}\\
 \end{center}
@@ -133,12 +133,12 @@
 
 \section{Einleitung}
 \subsection{Projektumfeld}
-Die Green Solutions Software GmbH entwickelt und betreibt die green solutions cloud software (GSCS) als zentrale Software für die grüne Branche\footnote{Grüne Branche: Bezeichnung für den Wirtschaftsbereich, welcher unter anderem Baumschulen und Gartenhäuser beinhaltet.}. Als Teil der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formular-Editor entwickelt werden, der es Kunden ermöglicht, eigene Formulare ohne Programmierungskenntnisse zu erstellen und zu verwalten.
+Die Green Solutions Software GmbH entwickelt und betreibt die green solutions cloud software (GSCS) als zentrale Software für die grüne Branche\footnote{Grüne Branche: Bezeichnung für den Wirtschaftsbereich, welcher unter anderem Baumschulen und Gartenhäuser beinhaltet.}. Im Rahmen der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formularbaukasten entwickelt werden, der es den Kunden ermöglicht, ohneFachkentnisse der Programmierung eigene Formulare zu erstellen und zu verwalten.Im Rahmen der kontinuierlichen Weiterentwicklung und Verbesserung der GSCS soll ein dynamischer Formularbaukasten entwickelt werdenImplementierung eines dynamischen Formularbaukastens.
 
-\noindent Die GSCS bietet bereits verschiedene vorgefertigte Formulare für unterschiedliche Anwendungsfälle, jedoch erfordert die Anpassung dieser Formulare bisher den Einsatz von Entwicklungsressourcen. Die Entwicklung eines benutzerfreundlichen Formular-Editors würde die Flexibilität der GSCS erhöhen und gleichzeitig Entwicklungsressourcen einsparen.
+\noindent Die GSCS stellt verschiedene vorgefertigte Formulare für unterschiedliche Anwendungsfälle zur Verfügung, deren Anpassung jedoch Entwicklungsressourcen erfordert und aufgrund der begrenzten Individualisierbarkeit nur eingeschränkt möglich ist.
 
 \subsection{Projektziel}
-Ziel des Projekts ist die Implementierung eines dynamischen Formular-Editors als Komponente der GSCS. Der Editor soll es Benutzern ohne Programmierkenntnisse ermöglichen, Formulare nach ihren individuellen Anforderungen zu erstellen und zu gestalten. Die Komponente muss sich nahtlos in die bestehende Architektur der GSCS integrieren und die vorhandenen Designrichtlinien einhalten.
+Ziel des Projektes ist die Implementierung eines dynamischen Formularbaukastens als Komponente der GSCS. Der Editor soll es Benutzern ohne Programmierkenntnisse ermöglichen, Formulare nach ihren individuellen Anforderungen zu erstellen und zu gestalten. Die Komponente soll sich nahtlos in die bestehende Architektur der GSCS einfügen und den bestehenden Designrichtlinien entsprechen.
 
 Folgende Kernfunktionalitäten sollen umgesetzt werden:
 \begin{itemize}
@@ -148,7 +148,7 @@ Folgende Kernfunktionalitäten sollen umgesetzt werden:
 \end{itemize}
 
 \subsection{Projektbegründung}
-Die Implementierung eines dynamischen Formular-Editors für die GSCS bietet mehrere strategische Vorteile:
+Die Implementierung eines dynamischen Formularbaukastens für die GSCS bietet mehrere strategische Vorteile:
 \begin{itemize}
 \item Erstens ermöglicht der Editor den Kunden eine höhere Autonomie bei der Anpassung der Software an ihre individuellen Geschäftsprozesse. Dies steigert die Flexibilität und Akzeptanz der GSCS bei bestehenden und potenziellen Kunden.
 
@@ -156,22 +156,22 @@ Die Implementierung eines dynamischen Formular-Editors für die GSCS bietet mehr
 
 \item Drittens ermöglicht der Editor eine schnellere Reaktion auf sich ändernde gesetzliche Anforderungen oder Marktbedingungen, da Anpassungen an Formularen zeitnah ohne Programmieraufwand erfolgen können.
 
-\noindent Die Entwicklung eines neuen Formular-Editors ist auch durch einen wichtigen technologischen Wandel begründet: Die GSCS befindet sich derzeit in einer umfassenden Frontend-Modernisierung. Das bestehende Formular-Builder-System wurde ursprünglich mit DOTNET\footnote{DOTNET: Web-Framework von Microsoft zur serverseitigen Entwicklung dynamischer Webseiten und Webanwendungen.} und jQuery\footnote{jQuery: JavaScript-Bibliothek zur Vereinfachung von DOM-Manipulation, Events und Ajax-Anfragen.} entwickelt, während die neue Frontend-Anwendung vollständig auf Angular\footnote{Angular: Moderne TypeScript-basierte Webframework von Google für die Entwicklung dynamischer Single-Page-Anwendungen.} und Tailwind CSS\footnote{Tailwind CSS: Utility-First CSS-Framework zur schnellen Gestaltung von Benutzeroberflächen direkt im HTML-Code.} basiert.
+\noindent Die Entwicklung eines neuen Formularbaukastens ist auch durch einen wichtigen technologischen Wandel begründet: Die GSCS befindet sich derzeit in einer umfassenden Frontend-Modernisierung. Die bestehende Lösung zur Individualisierung der Formulare wurde ursprünglich mit DOTNET\footnote{DOTNET: Web-Framework von Microsoft zur serverseitigen Entwicklung dynamischer Webseiten und Webanwendungen.} und jQuery\footnote{jQuery: JavaScript-Bibliothek zur Vereinfachung von DOM-Manipulation, Events und Ajax-Anfragen.} entwickelt, während die neue Frontend-Anwendung vollständig auf Angular\footnote{Angular: Moderne TypeScript-basierte Webframework von Google für die Entwicklung dynamischer Single-Page-Anwendungen.} und Tailwind CSS\footnote{Tailwind CSS: Utility-First CSS-Framework zur schnellen Gestaltung von Benutzeroberflächen direkt im HTML-Code.} basiert.
 
 \end{itemize}
 \subsection{Projektschnittstellen}
 
-Die Formular-Editor-Komponente interagiert mit verschiedenen Schnittstellen innerhalb der GSCS:
+Die Formularbaukasten-Komponente interagiert mit verschiedenen Schnittstellen innerhalb der GSCS:
 
 \noindent \textbf{Technische Schnittstellen:} Die Komponente wird in Angular entwickelt und kommuniziert mit dem DOTNET-Backend der GSCS über REST-APIs\footnote{REST-API: Schnittstelle, die auf dem HTTP-Protokoll basiert und einen einfachen, standardisierten Datenaustausch zwischen Client und Server ermöglicht.}. Die Formularstrukturen werden in der SQL-Datenbank der GSCS gespeichert. Die Darstellung der Formulare erfolgt über die neu entwickelte GSCS Frontend-App, die auf Angular und Tailwind CSS basiert.
 
 
-\noindent \textbf{Organisatorische Schnittstellen:} Die Entwicklung erfolgt in Abstimmung mit dem Frontend-Team und dem Backend-Team der GSS-GmbH. Der Projektfortschritt wird in regelmäßigen Abständen mit dem Abteilungsleiter Entwicklung besprochen. Die Abnahme des Projekts erfolgt durch den TEamleiter, einen Senior-Frontend-Entwickler und die Geschäftsführung.
+\noindent \textbf{Organisatorische Schnittstellen:} Die Entwicklung erfolgt in Abstimmung mit dem Frontend-Team und dem Backend-Team der GSS-GmbH. Der Projektfortschritt wird in regelmäßigen Abständen mit dem Abteilungsleiter Entwicklung besprochen. Die Abnahme des Projekts erfolgt durch den Teamleiter, einen Senior-Frontend-Entwickler und die Geschäftsführung.
 
 \noindent \textbf{Benutzergruppen:} Primäre Benutzergruppen sind Administratoren und Power-User auf Kundenseite, die eigene Formulare erstellen und verwalten werden. Sekundäre Benutzergruppen sind die Endanwender, die die erstellten Formulare ausfüllen werden.
 
 \subsection{Projektmethodik}
-Die Implementierung des Formular-Editors erfolgte streng nach dem Wasserfallmodell, einer sequentiellen Projektmanagement-Methode, die durch klar definierte und aufeinanderfolgende Phasen gekennzeichnet ist. Diese Methodik wurde aufgrund der gut definierten Anforderungen und des überschaubaren Projektumfangs gewählt.
+Die Implementierung des Formularbaukastens erfolgte streng nach dem Wasserfallmodell, einer sequentiellen Projektmanagement-Methode, die durch klar definierte und aufeinanderfolgende Phasen gekennzeichnet ist. Diese Methodik wurde aufgrund der gut definierten Anforderungen und des überschaubaren Projektumfangs gewählt.
 
 Der Entwicklungsprozess umfasste folgende strikt voneinander getrennte Phasen:
 \begin{enumerate}
@@ -187,10 +187,10 @@ Der Entwicklungsprozess umfasste folgende strikt voneinander getrennte Phasen:
 \noindent Diese strukturierte Vorgehensweise ermöglichte eine klare Planung und Kontrolle des Projektfortschritts sowie eine gründliche Dokumentation in jeder Phase. Das Qualitätssicherungs- und Feedbackverfahren erfolgte entsprechend dem Wasserfallmodell in der dafür vorgesehenen Testphase, um die Einhaltung der initial definierten Anforderungen zu gewährleisten.
 
 \subsection{Projektabgrenzung}
-Der Formular-Editor wird als Komponente in die bestehende GSCS integriert und nutzt die vorhandene Infrastruktur. Folgende Aspekte sind nicht Teil des Projekts:
+Der Formularbaukasten wird als Komponente in die bestehende GSCS integriert und nutzt die vorhandene Infrastruktur. Folgende Aspekte sind nicht Teil des Projekts:
 
 \begin{itemize}
-  \item Entwicklung einer eigenständigen Formular-Editor-Anwendung außerhalb der GSCS
+  \item Entwicklung einer eigenständigen Formularbaukasten-Anwendung außerhalb der GSCS
   \item Bestehende Formulare: Diese verbleiben im alten System, und neue Formulare werden mit dem neuen Editor erstellt
 \end{itemize}
 
@@ -201,9 +201,10 @@ Der Formular-Editor wird als Komponente in die bestehende GSCS integriert und nu
 \subsection{Durchführung der Ist-Analyse}
 Die aktuelle Situation bezüglich der Formularerstellung und -verwaltung in der GSCS wurde anhand von Interviews mit Kunden, Support-Mitarbeitern und Entwicklern analysiert.
 
+
 \noindent Aktuell bietet die GSCS eine begrenzte Anzahl vordefinierter Formulare für verschiedene Anwendungsfälle. Diese Formulare sind statisch und können nur durch Entwickler angepasst werden. Kundenspezifische Anpassungen erfordern daher einen Entwicklungsauftrag, der sowohl Zeit- als auch Kostenaufwand für den Kunden bedeutet.
 
-Der aktuelle Prozess zur Anpassung von Formularen umfasst folgende Schritte:
+\noindent Der aktuelle Prozess zur Anpassung von Formularen umfasst folgende Schritte:
 \begin{enumerate}
   \item Der Kunde formuliert seine Anforderungen an das Formular
   \item Ein Entwickler implementiert die Änderungen im Quellcode
@@ -211,11 +212,20 @@ Der aktuelle Prozess zur Anpassung von Formularen umfasst folgende Schritte:
   \item Die angepasste Version wird im Rahmen eines regulären Releases ausgeliefert
 \end{enumerate}
 
+\noindent Besonders hervorzuheben sind die folgenden Einschränkungen der bestehenden Architektur:
+
+\begin{itemize}
+  \item Keine Drag-und-Drop-Funktionalität für die Platzierung von Formularfeldern
+  \item Keine Möglichkeit, die Breite einzelner Formularfelder anzupassen
+  \item Keine Möglichkeit, Formularfelder nebeneinander zu platzieren (nur vertikale Anordnung)
+\end{itemize}
+
+\noindent Diese Einschränkungen führen zu einer unflexiblen Benutzeroberfläche und erschweren die kundenspezifische Anpassung von Formularen ohne Entwicklerunterstützung.
+
 \noindent Dieser Prozess dauert je nach Komplexität der Anforderungen und Auslastung der Entwicklungsabteilung zwischen einer und zwei Wochen, da aufgrund der begrenzten Ressourcen in der Entwicklungsabteilung nicht alle Kundenanforderungen zeitnah umgesetzt werden können, was zu Unzufriedenheit führt.
 
 \subsection{Durchführung der Soll-Analyse}
-Basierend auf den Erkenntnissen der Ist-Analyse und den Anforderungen der Stakeholder wurden folgende Anforderungen an den Formular-Editor definiert:
-
+Basierend auf den Erkenntnissen der Ist-Analyse und den Anforderungen der Stakeholder wurden folgende Anforderungen an den Formularbaukasten definiert:
 \textbf{Funktionale Anforderungen:}
 \begin{itemize}
   \item Intuitive Drag-and-Drop-Oberfläche zur Erstellung und Bearbeitung von Formularen
@@ -224,26 +234,26 @@ Basierend auf den Erkenntnissen der Ist-Analyse und den Anforderungen der Stakeh
   \item Responsives Design für verschiedene Bildschirmgrößen
   \item Anpassbare Formularlayouts mit Spalten und Abschnitten
 \end{itemize}
-
 \textbf{Nicht-funktionale Anforderungen:}
 \begin{itemize}
   \item Benutzerfreundlichkeit: Der Editor muss ohne technische Vorkenntnisse bedienbar sein
   \item Performance: Die Ladezeit für den Editor darf 5 Sekunden nicht überschreiten
   \item Sicherheit: Einhaltung der DSGVO-Anforderungen
+  \item Barrierefreiheit: Konformität mit den Anforderungen des Barrierefreiheitsstärkungsgesetzes (BFSG)
   \item Wartbarkeit: Modularer Aufbau für einfache Erweiterbarkeit
 \end{itemize}
 
 \subsection{Wirtschaftlichkeitsanalyse und Amortisationsrechnung}
 \subsubsection{Make-or-Buy Entscheidung}
-Für die Implementierung des Formular-Editors wurden drei Optionen in Betracht gezogen:
+Für die Implementierung des Formularbaukastens wurden drei Optionen in Betracht gezogen:
 
 \begin{enumerate}
-  \item Entwicklung einer Eigenimplementierung
+  \item  Entwicklung einer individuellen Lösung
   \item Integration einer Open-Source-Lösung
   \item Kauf einer kommerziellen Lösung
 \end{enumerate}
 
-\noindent Nach einer gründlichen Analyse der verfügbaren Optionen wurde die Entscheidung für eine Eigenimplementierung getroffen. Die Gründe hierfür waren:
+\noindent Nach einer gründlichen Analyse der verfügbaren Optionen wurde die Entscheidung für eine Eigenimplementation getroffen. Die Gründe hierfür waren:
 
 \begin{itemize}
   \item Bessere Integration in die bestehende GSCS-Architektur
@@ -255,10 +265,10 @@ Für die Implementierung des Formular-Editors wurden drei Optionen in Betracht g
 
 \noindent Obwohl die Entwicklungsabteilung im Tagesgeschäft durch zahlreiche Kundenanfragen ausgelastet ist, verfügt sie über das notwendige Fachwissen für die Eigenentwicklung dieser Komponente. Die Entscheidung zur Eigenentwicklung wurde getroffen, um langfristig Ressourcen zu sparen, da die Formularanpassungen nach Projektabschluss nicht mehr durch die Entwicklungsabteilung durchgeführt werden müssen.
 
-\noindent Die untersuchten Open-Source-Lösungen erfüllten nicht alle Anforderungen oder hätten erhebliche Anpassungen erfordert. Kommerzielle Lösungen waren mit hohen Lizenzkosten verbunden und boten ebenfalls keine optimale Integration in die GSCS..
+\noindent Die untersuchten Open-Source-Lösungen erfüllten nicht alle Anforderungen oder hätten erhebliche Anpassungen erfordert. Kommerzielle Lösungen waren mit hohen Lizenzkosten verbunden und boten ebenfalls keine optimale Integration in die GSCS.
 
 \subsubsection{Projektkosten}
-\noindent Der Personalaufwand wurde mit 40 Arbeitsstunden für die Implementierung und Testen des Formular-Editors angesetzt. Der durchschnittliche Stundensatz für Entwickler (Auszubildende) beträgt 30€/Stunde. Die Dokumentation und Schulung umfasst 40 Stunden.
+\noindent Der Personalaufwand wurde mit 40 Arbeitsstunden für die Implementierung und Testen des Formularbaukastens angesetzt. Der durchschnittliche Stundensatz für Entwickler (Auszubildende) beträgt 30€/Stunde. Die Dokumentation und Schulung umfasst 40 Stunden.
 
 \begin{table}[h]
 \centering
@@ -272,22 +282,22 @@ Dokumentation/Schulung & 40 & 30€ & 1.200€ \\
 \textbf{Gesamtkosten} & & & \textbf{2.400€} \\
 \bottomrule
 \end{tabular}
-\caption{Kostenkalkulation für die Implementierung des Formular-Editors}
+\caption{Kostenkalkulation für die Implementierung des Formularbaukastens}
 \end{table}
 
 \noindent Für die Umsetzung des Projekts wird folgende Hardware verwendet: Ein leistungsstarker Arbeitsplatzrechner mit sechs Bildschirmen für das Büro sowie ein weiterer PC mit drei Bildschirmen für den Einsatz im Homeoffice. Als Software kommen Windows 11 Professional, Visual Studio 2022 Professional, Visual Studio Code sowie GitHub Enterprise zum Einsatz, um eine effiziente und professionelle Entwicklungsumgebung sicherzustellen.
 
 \subsubsection{Amortisationsdauer}
-Zur Berechnung der Amortisationsdauer wurden die Projektkosteneinsparungen durch den Formular-Editor analysiert. Basierend auf historischen Daten bearbeitet die Entwicklungsabteilung durchschnittlich 15 Formularanpassungen pro Monat mit einem durchschnittlichen Aufwand von 4 Stunden pro Anpassung. Bei einem Stundensatz von 65€ entspricht dies monatlichen Kosten von 3.900€.
+Zur Berechnung der Amortisationsdauer wurden die Projektkosteneinsparungen durch den Formularbaukasten analysiert. Basierend auf historischen Daten bearbeitet die Entwicklungsabteilung durchschnittlich 15 Formularanpassungen pro Monat mit einem durchschnittlichen Aufwand von 4 Stunden pro Anpassung. Bei einem Stundensatz von 65€ entspricht dies monatlichen Kosten von 3.900€.
 
-\noindent Mit dem Formular-Editor können Kunden Anpassungen selbst vornehmen, was den Entwicklungsaufwand reduziert. Es wird erwartet, dass 80\% der Formularanpassungen von Kunden selbst durchgeführt werden können. Dies führt zu einer monatlichen Einsparung von 3.120€.
+\noindent Mit dem Formularbaukasten können Kunden Anpassungen selbst vornehmen, was den Entwicklungsaufwand reduziert. Es wird erwartet, dass 80\% der Formularanpassungen von Kunden selbst durchgeführt werden können. Dies führt zu einer monatlichen Einsparung von 3.120€.
 
 
 \noindent Bei einer Investition von 2.400€ und monatlichen Einsparungen von 3.120€ beträgt die Amortisationszeit etwa 0,8 Monate (2.400€ ÷ 3.120€, gerundet 0,8). Die schnelle Amortisation bestätigt die wirtschaftliche Vorteilhaftigkeit des Projekts.
 
 \section{Entwurf}
 \subsection{Verfügbare Datensätze ermitteln}
-Als Grundlage für den Entwurf des Formular-Editors wurde zunächst eine Analyse der in der GSCS verfügbaren Datenstrukturen durchgeführt. Dies umfasste die Identifikation der relevanten Entitäten und deren Beziehungen zueinander.
+Als Grundlage für den Entwurf des Formularbaukastens wurde zunächst eine Analyse der in der GSCS verfügbaren Datenstrukturen durchgeführt. Dies umfasste die Identifikation der relevanten Entitäten und deren Beziehungen zueinander.
 
 \noindent Die GSCS verfügt bereits über eine Tabelle für Formulare, die um zusätzliche Spalten für die Formularstruktur erweitert werden kann. Ein Formular in der GSCS besteht aus folgenden Hauptkomponenten:
 
@@ -314,7 +324,7 @@ Für die Speicherung der Formularstrukturen wurde ein flexibles JSON-Schema entw
 
 
 \subsection{Technischer Entwurf der Schnittstelle}
-Der Formular-Editor besteht aus mehreren Hauptkomponenten, die miteinander interagieren:
+Der Formularbaukasten besteht aus mehreren Hauptkomponenten, die miteinander interagieren:
 
 \begin{itemize}
   \item Form-Canvas: Der Hauptbereich, in dem das Formular per Drag-and-Drop gestaltet wird
@@ -327,12 +337,12 @@ Der Formular-Editor besteht aus mehreren Hauptkomponenten, die miteinander inter
 \noindent Der Form-Canvas nutzt ein auf 12 Spalten basierendes Grid-System. Jedes Formularfeld verfügt über eine columns-Eigenschaft, die angibt, wie viele dieser Spalten es beansprucht. Der BuilderService ermittelt automatisch die verbleibenden Platzkapazitäten und passt das Layout dynamisch entsprechend an.
 
 \noindent Die Kommunikation zwischen den Komponenten erfolgt über Angular-Services\footnote{Angular-Services: Singleton-Objekte in Angular-Anwendungen, die spezifische Funktionalitäten über Komponenten hinweg bereitstellen, oft für Datenaustausch und Geschäftslogik verwendet.}, die den Zustand des Formulars verwalten und Änderungen an alle beteiligten Komponenten propagieren. Für die Drag-and-Drop-Funktionalität wird die Bibliothek ngx-drag-drop\footnote{ngx-drag-drop: Eine Angular-Bibliothek, die Drag-and-Drop-Funktionalität mit einer einfachen und intuitiven API zur Verfügung stellt.} verwendet.
-\noindent Die Speicherung der Formulare erfolgt über REST-API-Calls an das Backend. Die API-Schnittstelle wurde so gestaltet, dass sie Speichervorgang unterstützt.
+\noindent Die Speicherung der Formulare erfolgt über REST-API-Calls an das Backend.
 
-\noindent Die Internationalisierung wird vollständig durch das Modul ngx-translate\footnote{ngx-translate: Eine Angular-Bibliothek zur Implementierung von Mehrsprachigkeit in Anwendungen, die es ermöglicht, Texte und UI-Elemente dynamisch in verschiedenen Sprachen anzuzeigen.} unterstützt, wodurch alle Texte und Beschriftungen lokalisiert werden können.
+\noindent Die Internationalisierung wird vollständig durch das Modul ngx-translate\footnote{ngx-translate: Eine Angular-Bibliothek zur Implementierung von Mehrsprachigkeit in Anwendungen, die es ermöglicht, Texte und UI-Elemente dynamisch in verschiedenen Sprachen anzuzeigen.} umgesetzt, wodurch alle Texte und Beschriftungen lokalisiert werden können.
 \section{Implementierung}
 \subsection{Initialisierung des Projekts}
-Die Implementierung begann mit der Einrichtung der Entwicklungsumgebung und der Definition der grundlegenden Projektstruktur. Da der Formular-Editor als Komponente in die bestehende GSCS integriert werden sollte, wurde ein neues Angular-Modul innerhalb des bestehenden Projekts erstellt.
+Die Implementierung begann mit der Einrichtung der Entwicklungsumgebung und der Definition der grundlegenden Projektstruktur. Da der Formularbaukasten als Komponente in die bestehende GSCS integriert werden sollte, wurde eine neuee Angular-Komponente innerhalb des bestehenden Projekts erstellt.
 
 \noindent Die Projektstruktur folgt den Best Practices für Angular-Anwendungen und orientiert sich an der bereits etablierten Struktur der GSCS. Die Hauptkomponenten wurden als eigenständige Module implementiert, um eine klare Trennung der Verantwortlichkeiten zu gewährleisten und die Wiederverwendbarkeit zu fördern.
 
@@ -347,7 +357,7 @@ Die Implementierung der Modellumwandlung umfasste die Erstellung von TypeScript-
 
 
 \subsection{Implementierung der automatischen Abläufe}
-Zur Unterstützung des Formular-Editors wurden mehrere automatische Abläufe implementiert, die die Benutzererfahrung verbessern und die Konsistenz der Daten gewährleisten:
+Zur Unterstützung des Formularbaukastens wurden mehrere automatische Abläufe implementiert, die die Benutzererfahrung verbessern und die Konsistenz der Daten gewährleisten:
 
 \begin{itemize}
   \item Automatisches Speichern: Der Editor speichert den aktuellen Zustand des Formulars regelmäßig als Entwurf, um Datenverlust zu verhindern
@@ -358,10 +368,10 @@ Zur Unterstützung des Formular-Editors wurden mehrere automatische Abläufe imp
 \noindent Diese automatischen Abläufe wurden als Teil der Angular-Services implementiert und sind eng mit dem Zustandsmanagement des Editors verbunden.
 
 \subsection{Integration in das bestehende System}
-Die Integration des Formular-Editors in die bestehende GSCS erforderte eine sorgfältige Abstimmung mit anderen Komponenten und Modulen. Folgende Integrationsschritte wurden durchgeführt:
+Die Integration des Formularbaukastens in die bestehende GSCS erforderte eine sorgfältige Abstimmung mit anderen Komponenten und Modulen. Folgende Integrationsschritte wurden durchgeführt:
 
 \begin{itemize}
-  \item Einbindung in das Menüsystem der GSCS zur Navigation zum Formular-Editor
+  \item Einbindung in das Menüsystem der GSCS zur Navigation zum Formularbaukasten
   \item Integration in das Berechtigungssystem zur Steuerung des Zugriffs auf den Editor
   \item Anpassung des bestehenden Formular-Renderers zur Darstellung der mit dem Editor erstellten Formulare
 \end{itemize}
@@ -369,7 +379,7 @@ Die Integration des Formular-Editors in die bestehende GSCS erforderte eine sorg
 \noindent Die Integration wurde schrittweise durchgeführt und nach jedem Schritt gründlich getestet, um Kompatibilitätsprobleme frühzeitig zu erkennen und zu beheben.
 
 \subsection{Implementierung der Konfiguration}
-Um eine hohe Flexibilität und Anpassbarkeit des Formular-Editors zu gewährleisten, wurde ein umfassendes Konfigurationssystem implementiert. Dieses System ermöglicht die Anpassung des Editors an verschiedene Anwendungsfälle und Kundenanforderungen, ohne den Quellcode ändern zu müssen.
+Um eine hohe Flexibilität und Anpassbarkeit des Formularbaukastens zu gewährleisten, wurde ein umfassendes Konfigurationssystem implementiert. Dieses System ermöglicht die Anpassung des Editors an verschiedene Anwendungsfälle und Kundenanforderungen, ohne den Quellcode ändern zu müssen.
 
 \noindent Die Konfiguration umfasst folgende Bereiche:
 \begin{itemize}
@@ -381,36 +391,36 @@ Um eine hohe Flexibilität und Anpassbarkeit des Formular-Editors zu gewährleis
 
 \section{Abnahme}
 \subsection{Initiales Deployment auf einem Testsystem}
-Nach Abschluss der Implementierung wurde der Formular-Editor auf einem Testsystem deployt, um eine umfassende Validierung der Funktionalität und Integration durchzuführen. Das Testsystem ist eine Kopie des Produktivsystems mit realistischen Testdaten, um möglichst produktionsnahe Bedingungen zu simulieren.
+Nach Abschluss der Implementierung wurde der Formularbaukasten auf einem Testsystem deployt, um eine umfassende Validierung der Funktionalität und Integration durchzuführen. Das Testsystem ist eine Kopie des Produktivsystems mit realistischen Testdaten, um möglichst produktionsnahe Bedingungen zu simulieren.
 
 \noindent Für das Deployment wurden die in der GSCS etablierten CI/CD\footnote{CI/CD: Continuous Integration und Continuous Deployment, eine Entwicklungspraxis, bei der Codeänderungen automatisch getestet und in die Produktionsumgebung übertragen werden.}-Prozesse verwendet, die eine automatisierte Bereitstellung und Konfiguration der Anwendung ermöglichen. Nach dem Deployment wurde eine initiale Konfiguration des Editors vorgenommen, um die grundlegende Funktionalität zu überprüfen.
 
 \noindent Der Deploymentprozess wurde detailliert dokumentiert, um eine reibungslose Bereitstellung auf anderen Umgebungen zu gewährleisten.
 
 \subsection{Übertragungstests}
-Nach dem initialen Deployment wurden umfangreiche Tests durchgeführt, um die Funktionalität des Formular-Editors zu validieren. Die Tests umfassten folgende Bereiche:
-
+Nach dem initialen Deployment wurden umfangreiche Tests durchgeführt, um die Funktionalität des Formularbaukastens zu validieren. Die Tests umfassten folgende Bereiche:
 \begin{itemize}
   \item Funktionale Tests: Überprüfung aller Funktionen des Editors gemäß den Anforderungen
   \item Integrationstests: Validierung der Integration mit anderen Komponenten der GSCS
   \item Usability-Tests: Bewertung der Benutzerfreundlichkeit durch potenzielle Endbenutzer
   \item Performance-Tests: Messung der Ladezeiten und Reaktionsgeschwindigkeit
   \item Sicherheitstests: Überprüfung auf potenzielle Sicherheitslücken
+  \item Barrierefreiheitstests: Detaillierte Überprüfung der Konformität mit den Anforderungen des Barrierefreiheitsstärkungsgesetzes (BFSG), einschließlich Prüfung der WCAG 2.1-Kriterien, Tastaturbedienbarkeit, Screenreader-Kompatibilität, ausreichender Farbkontraste und alternativer Textbeschreibungen
 \end{itemize}
 
-\noindent Die Tests wurden sowohl manuell als auch automatisiert durchgeführt. Für die automatisierten Tests wurden Cypress und Jest verwendet, um eine hohe Testabdeckung zu erreichen und Regressionstests zu ermöglichen.
+\noindent Die Tests wurden sowohl manuell als auch automatisiert durchgeführt. Für die automatisierten Tests wurde Jest\footnote{Jest ist ein JavaScript-Testframework, das für Unit-Tests verwendet wird und eine hohe Testabdeckung sowie effiziente Regressionstests ermöglicht.} verwendet, um eine hohe Testabdeckung zu erreichen und Regressionstests zu ermöglichen.
 
-\noindent Während der Tests wurden einige Probleme identifiziert, insbesondere bei der Performanz bei komplexen Formularen und bei der Benutzerfreundlichkeit bestimmter Interaktionen. Diese Probleme wurden dokumentiert und in der Implementierung behoben.
+\noindent Während der Tests wurden einige Probleme identifiziert, insbesondere bei der Performance bei komplexen Formularen und bei der Benutzerfreundlichkeit bestimmter Interaktionen. Diese Probleme wurden dokumentiert und in der Implementierung behoben
 
 \subsection{Initiales Deployment auf dem Produktivsystem}
-Nach erfolgreicher Validierung auf dem Testsystem wurde der Formular-Editor auf dem Produktivsystem deployt. Der Deploymentprozess folgte dem gleichen Verfahren wie beim Testsystem, mit zusätzlichen Sicherheitsmaßnahmen aufgrund der höheren Kritikalität des Produktivsystems.
+Nach erfolgreicher Validierung auf dem Testsystem wurde der Formularbaukasten auf dem Produktivsystem deployt. Der Deploymentprozess folgte dem gleichen Verfahren wie beim Testsystem, mit zusätzlichen Sicherheitsmaßnahmen aufgrund der höheren Kritikalität des Produktivsystems.
 
 \noindent Das Deployment wurde in einer Phase mit geringer Benutzeraktivität durchgeführt, um potenzielle Auswirkungen auf den laufenden Betrieb zu minimieren. Nach dem Deployment wurde eine umfassende Funktionsprüfung durchgeführt, um sicherzustellen, dass alle Funktionen wie erwartet arbeiten.
 
 \noindent Den ersten Benutzern wurde der Zugriff auf den Editor schrittweise gewährt, beginnend mit einer Pilotgruppe, um Feedback zu sammeln und potenzielle Probleme zu identifizieren, bevor die Funktion allen Benutzern zur Verfügung gestellt wurde.
 
 \subsection{Tests mit Realdaten}
-Nach dem Deployment auf dem Produktivsystem wurden Tests mit realen Kundendaten durchgeführt, um sicherzustellen, dass der Formular-Editor unter realen Bedingungen korrekt funktioniert. Diese Tests umfassten:
+Nach dem Deployment auf dem Produktivsystem wurden Tests mit realen Kundendaten durchgeführt, um sicherzustellen, dass der Formularbaukasten unter realen Bedingungen korrekt funktioniert. Diese Tests umfassten:
 
 \begin{itemize}
   \item Erstellung vollständig neuer Formulare basierend auf aktuellen Anforderungen der Kunden
@@ -418,13 +428,13 @@ Nach dem Deployment auf dem Produktivsystem wurden Tests mit realen Kundendaten 
   \item Überprüfung der Datenvalidierung und -speicherung
 \end{itemize}
 
-\noindent Die Tests bezogen sich ausschließlich auf neu erstellte Formulare. Die bestehenden Formulare aus dem alten System bleiben unverändert und werden nicht in den neuen Formular-Editor übertragen. Stattdessen werden Kunden bei Bedarf neue Formulare mit dem Editor erstellen.
+\noindent Die Tests bezogen sich ausschließlich auf neu erstellte Formulare. Die bestehenden Formulare aus dem alten System bleiben unverändert und werden nicht in den neuen Formularbaukasten übertragen. Stattdessen werden Kunden bei Bedarf neue Formulare mit dem Editor erstellen.
 
 \noindent Die Tests mit Realdaten bestätigten die grundlegende Funktionalität des Editors und lieferten wertvolles Feedback für zukünftige Verbesserungen. Diese abschließende Testphase erfolgte gemäß dem Wasserfallmodell erst nach vollständiger Implementierung und steht im Einklang mit der sequentiellen Projektmethodik.
 
 \section{Interne Dokumentation}
 \subsection{Entwicklerdokumentation}
-Zur Unterstützung der zukünftigen Wartung und Weiterentwicklung des Formular-Editors wurde eine umfassende Entwicklerdokumentation erstellt. Diese Dokumentation besteht aus mehreren Teilen:
+Zur Unterstützung der zukünftigen Wartung und Weiterentwicklung des Formularbaukastens wurde eine umfassende Entwicklerdokumentation erstellt. Diese Dokumentation besteht aus mehreren Teilen:
 
 \begin{itemize}
   \item Architekturübersicht: Beschreibung der Gesamtarchitektur und der Interaktion der verschiedenen Komponenten
@@ -438,10 +448,10 @@ Zur Unterstützung der zukünftigen Wartung und Weiterentwicklung des Formular-E
 \noindent Die Entwicklerdokumentation wurde mit dem Entwicklungsteam abgestimmt und in einem Review-Prozess validiert, um sicherzustellen, dass alle relevanten Aspekte abgedeckt sind und die Dokumentation verständlich und vollständig ist.
 
 \subsection{Benutzerhandbuch}
-Neben der Entwicklerdokumentation wurde ein umfassendes Benutzerhandbuch erstellt, das sich an die Endbenutzer des Formular-Editors richtet. Das Benutzerhandbuch enthält folgende Abschnitte:
+Neben der Entwicklerdokumentation wurde ein umfassendes Benutzerhandbuch erstellt, das sich an die Endbenutzer des Formularbaukastens richtet. Das Benutzerhandbuch enthält folgende Abschnitte:
 
 \begin{itemize}
-  \item Einführung: Übersicht über den Formular-Editor und seine Funktionen
+  \item Einführung: Übersicht über den Formularbaukasten und seine Funktionen
   \item Erste Schritte: Anleitung zur ersten Nutzung des Editors
   \item Grundlegende Funktionen: Erstellung, Bearbeitung und Verwaltung von Formularen
   \item Feldtypen: Beschreibung der verfügbaren Feldtypen und ihrer Eigenschaften
@@ -455,7 +465,7 @@ Neben der Entwicklerdokumentation wurde ein umfassendes Benutzerhandbuch erstell
 
 \section{Fazit}
 \subsection{Soll-/Ist-Vergleich}
-Die Implementierung des Formular-Editors wurde größtenteils gemäß den ursprünglichen Anforderungen und dem geplanten Zeitrahmen abgeschlossen. Ein detaillierter Vergleich der Soll- und Ist-Werte zeigt sowohl Erfolge als auch Herausforderungen des Projekts.\\
+Die Implementierung des Formularbaukastens wurde größtenteils gemäß den ursprünglichen Anforderungen und dem geplanten Zeitrahmen abgeschlossen. Ein detaillierter Vergleich der Soll- und Ist-Werte zeigt sowohl Erfolge als auch Herausforderungen des Projekts.\\
 \\
 \noindent \textbf{Funktionsumfang:} Alle in der Anforderungsanalyse definierten Kernfunktionen wurden erfolgreich implementiert. Einige weniger kritische Funktionen, wie das Speichern von Vorlagen, wurde aufgrund von Zeitbeschränkungen auf eine spätere Version verschoben.\\
 \\
@@ -467,7 +477,7 @@ Die Implementierung des Formular-Editors wurde größtenteils gemäß den urspr�
 \noindent \textbf{Benutzerakzeptanz:} Die ersten Rückmeldungen von Benutzern nach dem Release waren überwiegend positiv. Insbesondere wurde die intuitive Bedienung und die Flexibilität bei der Gestaltung von Formularen gelobt.
 
 \subsection{Ausblick}
-Basierend auf den Erfahrungen und dem Feedback aus der ersten Version des Formular-Editors wurden mehrere Ansatzpunkte für zukünftige Erweiterungen und Verbesserungen identifiziert:
+Basierend auf den Erfahrungen und dem Feedback aus der ersten Version des Formularbaukasten wurden mehrere Ansatzpunkte für zukünftige Erweiterungen und Verbesserungen identifiziert:
 
 \begin{itemize}
   \item Optimierung der Performance bei komplexen Formularen durch verbesserte Rendering-Algorithmen
@@ -479,10 +489,10 @@ Basierend auf den Erfahrungen und dem Feedback aus der ersten Version des Formul
 
 \noindent Für die nächste Version ist bereits ein Feature-Set definiert, das auf Basis der Prioritätsbewertung durch Produktmanagement und Kundenfeedback ausgewählt wurde. Die Entwicklung dieser Version ist für das kommende Quartal geplant.
 
-\noindent Langfristig wird der Formular-Editor zu einem zentralen Bestandteil der GSCS ausgebaut, der nicht nur für eigenständige Formulare, sondern auch für die Konfiguration von Eingabemasken in anderen Modulen der GSCS genutzt werden kann. Dies wird zu einer einheitlichen Benutzererfahrung über die gesamte Anwendung hinweg beitragen und die Flexibilität für Kunden weiter erhöhen.
+\noindent Langfristig wird der Formularbaukasten zu einem zentralen Bestandteil der GSCS ausgebaut, der nicht nur für eigenständige Formulare, sondern auch für die Konfiguration von Eingabemasken in anderen Modulen der GSCS genutzt werden kann. Dies wird zu einer einheitlichen Benutzererfahrung über die gesamte Anwendung hinweg beitragen und die Flexibilität für Kunden weiter erhöhen.
 
 \subsection{Gelerntes}
-Bei der Entwicklung des Formular-Editors Komponante und seiner Services habe ich viel gelernt, sowohl in technischer als auch in projektorganisatorischer Hinsicht.
+Bei der Entwicklung des Formularbaukastens Komponante und seiner Services habe ich viel gelernt, sowohl in technischer als auch in projektorganisatorischer Hinsicht.
 
 \paragraph{Technische Erkenntnisse}
 Im technischen Bereich konnte ich meine Kenntnisse in Angular und der Entwicklung komplexer, interaktiver Benutzeroberflächen vertiefen. Insbesondere die Implementierung des Drag-and-Drop-Systems in Verbindung mit einem responsiven Grid-Layout stellte eine interessante Herausforderung dar, die eine tiefe Auseinandersetzung mit den Möglichkeiten von Angular und dem Angular ngx-drag-drop erforderte.
@@ -716,7 +726,7 @@ Erstellung des Benutzerhandbuchs & 3h \\
 \textbf{Gesamt} & \textbf{80h} \\
 \hline
 \end{tabular}
-\caption{Detaillierte Zeitplanung für die Implementierung des Formular-Editors}
+\caption{Detaillierte Zeitplanung für die Implementierung des Formularbaukastens}
 \end{table}
 
 
@@ -843,5 +853,7 @@ Erstellung des Benutzerhandbuchs & 3h \\
   
   \bibitem{markdown} Markdown \\
   \url{https://de.wikipedia.org/wiki/Markdown}
+    \bibitem{jest} Jest \\
+  \url{https://thymikee.github.io/jest-preset-angular/docs/getting-started/presets/}
 \end{thebibliography}
 \end{document}
